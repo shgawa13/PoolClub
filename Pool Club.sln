@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pool Club", "Pool Club\Pool Club.csproj", "{A5784612-9916-4BBB-B77A-2A2673231AD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{F0CB68F8-B587-4B0B-AAA6-64CDC097D885}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5784612-9916-4BBB-B77A-2A2673231AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5784612-9916-4BBB-B77A-2A2673231AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5784612-9916-4BBB-B77A-2A2673231AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5784612-9916-4BBB-B77A-2A2673231AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0CB68F8-B587-4B0B-AAA6-64CDC097D885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0CB68F8-B587-4B0B-AAA6-64CDC097D885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0CB68F8-B587-4B0B-AAA6-64CDC097D885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0CB68F8-B587-4B0B-AAA6-64CDC097D885}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {87A2AA8C-220E-4DA1-8FFB-0CF0EECE4594}
+	EndGlobalSection
+EndGlobal
