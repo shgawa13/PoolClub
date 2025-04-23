@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-  public class clsPersonData
+  internal class clsPerson
   {
-
   }
 }
