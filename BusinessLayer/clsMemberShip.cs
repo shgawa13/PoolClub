@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-  internal class Game
+  public class clsMemberShip
   {
+    
   }
 }

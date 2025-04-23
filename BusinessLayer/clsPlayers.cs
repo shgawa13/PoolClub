@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-  internal class Users
+  internal class clsPlayers
   {
   }
 }
