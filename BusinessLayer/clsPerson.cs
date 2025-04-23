@@ -11,34 +11,44 @@ namespace BusinessLayer
     public enum enMode { AddNew = 0, Update = 1 }
     private enMode _Mode = enMode.AddNew;
 
-    private int _ID;
-    public int ID
+    private int _PersonID;
+    public int PersonID
     {
-      get { return _ID; }
-      set { _ID = value; }
+      get { return _PersonID; }
+      set { _PersonID = value; }
     }
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string PhoneNumber { get; set; }
+    public int MemberShipPersonID { get; set; }
+    public bool IsActive { get; set; }
+    public int CreatedByPersonID { get; set; }
 
     public clsPerson()
     {
-      this.ID = -1;
+      this.PersonID = -1;
       this.FirstName = string.Empty;
       this.LastName = string.Empty;
       this.PhoneNumber = string.Empty;
+      this.MemberShipPersonID = -1;
+      this.IsActive = false;
+      this.CreatedByPersonID = -1;
 
       _Mode = enMode.AddNew;
     }
 
 
-    private clsPerson(int ID, string FirstName, string LastName, string PhoneNumber)
+    private clsPerson(int PersonID, string FirstName, string LastName, string PhoneNumber,int MemberShipPersonID,
+      bool IsActive,int CreatedByPersonID)
     {
-      this.ID = ID;
+      this.PersonID = PersonID;
       this.FirstName = FirstName;
       this.LastName = LastName;
       this.PhoneNumber = PhoneNumber;
+      this.MemberShipPersonID = MemberShipPersonID;
+      this.IsActive = IsActive;
+      this.CreatedByPersonID = CreatedByPersonID;
 
       _Mode = enMode.Update;
     }
@@ -46,14 +56,14 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      //this.ID = 
+      //this.PersonID = 
 
       return false;
     }
 
     private bool _Update() => false;
 
-    public static clsPerson Find(int ID)
+    public static clsPerson Find(int PersonID)
     {
       return null;
     }
@@ -63,7 +73,7 @@ namespace BusinessLayer
 
     public static bool IsExist(string PhoneNumber) => false;
 
-    public static bool Delete(int ID) => false;
+    public static bool Delete(int PersonID) => false;
 
 
     public  bool Save()

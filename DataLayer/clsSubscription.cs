@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataLayer
 {
-  internal class clsSubscription
+  public class clsSubscription
   {
   }
 }
