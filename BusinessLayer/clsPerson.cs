@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer;
 
 namespace BusinessLayer
 {
@@ -56,9 +57,10 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      //this.PersonID = 
+      this.PersonID = clsPersonData.AddNewPerson(this.FirstName,this.LastName,this.PhoneNumber,this.MemberShipPersonID,
+        this.IsActive,this.CreatedByPersonID);
 
-      return false;
+      return (this.PersonID > 0);
     }
 
     private bool _Update() => false;

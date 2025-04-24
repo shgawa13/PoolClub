@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataLayer;
 
 namespace DataLayer
 {
-  public class clsPayment
+  public class clsPaymentData
   {
   }
 }
