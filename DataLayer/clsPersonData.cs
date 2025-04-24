@@ -7,12 +7,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Collections;
+using Microsoft.SqlServer.Server;
 
 namespace DataLayer
 {
   public class clsPersonData
   {
-    
+    /// <summary>
+    /// AddNewPerson: 
+    /// it takes 6 Parameters
+    /// </summary>
+    /// <param name="FirstName"></param>
+    /// <param name="LastName"></param>
+    /// <param name="PhoneNumber"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="IsActive"></param>
+    /// <param name="CreatedByID"></param>
+    /// <returns>the New PersonID: int</returns>
     public static int AddNewPerson(string FirstName,string LastName,string PhoneNumber,int MemberShipID,
       bool IsActive,int CreatedByID)
     {
@@ -64,7 +75,16 @@ namespace DataLayer
     }
 
 
-    // Update Person
+    /// <summary>
+    /// Update Person
+    /// </summary>
+    /// <param name="PersonID"></param>
+    /// <param name="FirstName"></param>
+    /// <param name="LastName"></param>
+    /// <param name="PhoneNumber"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="IsActive"></param>
+    /// <returns>Boolen</returns>
     public static bool Update(int PersonID, string FirstName, string LastName, string PhoneNumber, int MemberShipID,
       bool IsActive)
     {
@@ -117,9 +137,21 @@ namespace DataLayer
 
 
 
-    // Find person by PersonID
+    /// <summary>
+    /// FindPersonByPhonNumber:
+    ///   It takes 7 parameters
+    ///   the first param pass by value and the rest pass by ref.
+    /// </summary>
+    /// <param name="PersonID"></param>
+    /// <param name="FirstName"></param>
+    /// <param name="LastName"></param>
+    /// <param name="PhoneNumber"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="CreatedByID"></param>
+    /// <param name="IsActive"></param>
+    /// <returns>Boolen also fills  Parameters</returns>
     public static bool FindPersonByID(int PersonID, ref string FirstName,ref string LastName,  ref string PhoneNumber,
-        ref int MemberShipID,ref int CreatedByID, bool IsActive)
+        ref int MemberShipID,ref int CreatedByID, ref bool IsActive)
     {
 
       bool IsFound = false;
@@ -176,9 +208,21 @@ namespace DataLayer
     }
 
 
-    // Find person by PersonID
+    /// <summary>
+    ///  FindPersonByPhonNumber:
+    ///   It takes 7 parameters
+    ///   the first param pass by value and the rest pass by ref.
+    /// </summary>
+    /// <param name="PhoneNumber"></param>
+    /// <param name="PersonID"></param>
+    /// <param name="FirstName"></param>
+    /// <param name="LastName"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="CreatedByID"></param>
+    /// <param name="IsActive"></param>
+    /// <returns>Boolen also fills  Parameters</returns>
     public static bool FindPersonByPhonNumber(string PhoneNumber,ref int PersonID, ref string FirstName, ref string LastName,
-        ref int MemberShipID, ref int CreatedByID, bool IsActive)
+        ref int MemberShipID, ref int CreatedByID ,ref bool IsActive)
     {
 
       bool IsFound = false;
@@ -233,6 +277,66 @@ namespace DataLayer
       return IsFound;
     }
 
+
+    /// <summary>
+    /// Exist: checks if Person Exist
+    /// </summary>
+    /// <param name="PhoneNumber"></param>
+    /// <returns>Boolen</returns>
+    public static bool IsExist(string PhoneNumber)
+    {
+      bool IsExist = false;
+
+      string Query = @"Select * from People where PhoneNumber=@PhoneNumber";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(Query, connection))
+          {
+            // Adding Paramters
+            command.Parameters.AddWithValue("@PhoenNumber", PhoneNumber);
+            // rows effected  
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+
+              if (reader.Read())
+              {
+                IsExist= true;
+
+                PhoneNumber = (string)reader["PhoneNumber"];
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        // Console.WriteLine($"");
+      }
+
+      return IsExist;
+    }
+
+
+
+    /// <summary>
+    /// GetAllPeople
+    /// </summary>
+    /// <returns> DataTable</returns>
     public static DataTable GetAllPeople()
     {
       DataTable dtPeople = new DataTable();
@@ -273,8 +377,12 @@ namespace DataLayer
       return dtPeople;
     }
 
-
-
+    /// <summary>
+    /// DeletePerson:
+    ///   it take PersonID: int.
+    /// </summary>
+    /// <param name="PersonID"></param>
+    /// <returns>Boolen: if deleted return true other wise false </returns>
     public static bool DeletePerson(int PersonID)
     {
       int IsDeleted = -1;
