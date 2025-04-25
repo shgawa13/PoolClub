@@ -386,7 +386,7 @@ namespace DataLayer
     public static bool DeletePerson(int PersonID)
     {
       int IsDeleted = -1;
-      string query = @"Delete From Patients where PatientID=@PatientID;";
+      string query = @"Delete From People where PersonID=@PersonID;";
       try
       {
 
