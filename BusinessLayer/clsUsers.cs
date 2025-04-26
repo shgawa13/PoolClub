@@ -19,13 +19,38 @@ namespace BusinessLayer
       set { _UserID = value; }
     }
 
-    public string UserName { get; set; }
-    public string Password { get; set; }
-    public bool IsActive { get; set; }
+    private int _PersonID;
+    public int PersonID
+    {
+      get { return _PersonID; }
+      set { _PersonID = value; }
+    }
     
+    private string _UserName;
+    public string UserName 
+    {
+      get { return _UserName; }
+      set { _UserName = value; }
+    }
+
+    private string _Password;
+    public string Password 
+    {
+      get { return _Password; }
+      set { _Password = value; }
+    }
+
+    private bool _IsActive;
+    public bool IsActive 
+    {
+      get { return _IsActive; }
+      set { IsActive = value; } 
+    }
+
     public clsUsers()
     {
       this.UserID = -1;
+      this._PersonID = -1;
       this.UserName = string.Empty;
       this.Password = string.Empty;
       this.IsActive = false;
@@ -34,9 +59,10 @@ namespace BusinessLayer
     }
 
 
-    private clsUsers(int UserID, string UserName, string Password, bool IsActive)
+    private clsUsers(int UserID, int PeronID, string UserName, string Password, bool IsActive)
     {
       this.UserID = UserID;
+      this._PersonID = PeronID;
       this.UserName = UserName;
       this.Password = Password;
       this.IsActive = IsActive;
@@ -46,16 +72,27 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      //this.UserID = 
+      this.UserID = clsUserData.AddNewUser(this.PersonID, this.UserName, this.Password, this.IsActive);
 
-      return false;
+      return (this.UserID !=-1);
     }
 
-    private bool _Update() => false;
+    private bool _Update() => clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.Password, this.IsActive);
+
 
     public static clsUsers Find(int UserID)
     {
-      return null;
+      int PersonID = -1;
+      string UserName = string.Empty, Password = string.Empty;
+      bool IsActive = false;
+
+      bool IsFound = clsUserData.GetUserByID(UserID, ref PersonID, ref UserName, ref Password, ref IsActive);
+
+      if (IsFound)
+        return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
+      else
+        return null;
+
     }
 
     public static clsUsers Find(string PhoneNumber) => null;

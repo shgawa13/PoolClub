@@ -14,7 +14,7 @@ namespace DataLayer
   {
     // Get User by UserID
 
-    public static bool GetUserByID(int UserID, ref string UserName, ref string Password, ref bool IsActive ,ref int PersonID)
+    public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
     {
       bool IsFound = false;
 
