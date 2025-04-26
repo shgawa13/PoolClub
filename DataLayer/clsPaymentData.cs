@@ -12,12 +12,12 @@ namespace DataLayer
 {
   public class clsPaymentData
   {
-    public static int AddNewPayment(int PersonID, int MemberShipID, int CreatedByID, float Total)
+    public static int AddNewPayment(int PersonID, int MemberShipID, int CreatedByID, float Total, DateTime PaymentDate)
     {
       int PaymentID = -1;
 
-      string Query = @"Insert into Payments(PersonID,MemberShipID,CreatedByID,Total)
-         Values(@PersonID,@MemberShipID,@CreatedByID,@Total)
+      string Query = @"Insert into Payments(PersonID,MemberShipID,CreatedByID,Total,PaymentDate)
+         Values(@PersonID,@MemberShipID,@CreatedByID,@Total,@PaymentDate)
          Select SCOPE_IDENTITY()";
 
       try
@@ -36,6 +36,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
             command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
             command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
            
 
             // resiving object from DB
@@ -62,7 +63,7 @@ namespace DataLayer
 
     }
 
-    public static bool Update(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total)
+    public static bool Update(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total,DateTime PaymentDate)
     {
       int EffectedRow = 0;
 
@@ -70,7 +71,8 @@ namespace DataLayer
         set PersonID=@PersonID,
         MemberShipID=@MemberShipID,
         CreatedByID = @CreatedByID,
-        Total=@Total;
+        Total=@Total,
+        PaymentDate=@PaymentDate
         Where PaymentID=@PaymentID";
 
       try
@@ -89,6 +91,8 @@ namespace DataLayer
             command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
             command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
             command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
+
 
             // rows effected  
             EffectedRow = command.ExecuteNonQuery();
@@ -111,7 +115,8 @@ namespace DataLayer
 
     }
 
-    public static bool FindPaymentByID(int PaymentID,ref int PersonID,ref int MemberShipID, ref int CreatedByID, ref float Total)
+    public static bool FindPaymentByID(int PaymentID,ref int PersonID,ref int MemberShipID, ref int CreatedByID, 
+      ref float Total,ref DateTime PaymentDate)
     {
 
       bool IsFound = false;
@@ -145,6 +150,7 @@ namespace DataLayer
                 MemberShipID = (int)reader["MemberShipID"];
                 CreatedByID = (int)reader["CreatedByID"];
                 Total = (float)reader["Total"];
+                PaymentDate = (DateTime)reader["PaymentDate"];
 
               }
             }

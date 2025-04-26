@@ -45,6 +45,13 @@ namespace BusinessLayer
     private float _Totla;
     public float Total;
 
+    private DateTime _PaymentDate;
+    public DateTime PaymentDate
+    {
+      get { return _PaymentDate; }
+      set { value = _PaymentDate; }
+    }
+
     public clsPayments()
     {
       this.PaymentID = -1;
@@ -52,17 +59,19 @@ namespace BusinessLayer
       this.MemberShipID = -1;
       this.CreatedByID = -1;
       this.Total = 0;
+      this.PaymentDate = DateTime.Now;
 
       _Mode = enMode.AddNew;
     }
 
-    private clsPayments(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total)
+    private clsPayments(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total, DateTime PaymentDate)
     {
       this.PaymentID = PaymentID;
       this.PersonID = PersonID;
       this.MemberShipID = MemberShipID;
       this.CreatedByID = CreatedByID;
       this.Total = Total;
+      this.PaymentDate = PaymentDate;
 
       _Mode = enMode.Update;
     }
@@ -70,7 +79,7 @@ namespace BusinessLayer
     private bool _AddNew() 
     {
       this.PaymentID = clsPaymentData.AddNewPayment(this.PersonID, this.MemberShipID, this.CreatedByID, 
-        this.Total);
+        this.Total,this.PaymentDate);
 
       return (this.PaymentID != -1);
     
@@ -79,19 +88,20 @@ namespace BusinessLayer
     private bool _Update()
     {
       return clsPaymentData.Update(this.PaymentID, this.PersonID, this.MemberShipID, this.CreatedByID,
-        this.Total);
+        this.Total,this.PaymentDate);
     }
 
     public clsPayments Find(int PaymentID)
     {
       int PersonID = -1, MemberShipID = -1, CreatedByID = -1;
       float Total = 0;
+      DateTime PaymentDate = DateTime.Now;
 
       bool IsFound = clsPaymentData.FindPaymentByID(PaymentID, ref PersonID, ref MemberShipID, ref CreatedByID,
-        ref Total);
+        ref Total,ref PaymentDate);
 
       if (IsFound)
-        return new clsPayments(PaymentID, PersonID, MemberShipID, CreatedByID, Total);
+        return new clsPayments(PaymentID, PersonID, MemberShipID, CreatedByID, Total, PaymentDate);
       else
         return null;
     }
