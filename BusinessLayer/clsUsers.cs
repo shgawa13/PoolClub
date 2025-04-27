@@ -97,10 +97,9 @@ namespace BusinessLayer
 
     public static clsUsers Find(string PhoneNumber) => null;
 
+    public static bool IsExist(string UserName) => clsUserData.IsUserExist(UserName);
 
-    public static bool IsExist(string PhoneNumber) => false;
-
-    public static bool Delete(int UserID) => false;
+    public static bool Delete(int UserID) => clsUserData.DeleteUser(UserID);
 
 
     public bool Save()
