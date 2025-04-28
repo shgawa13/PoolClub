@@ -14,7 +14,7 @@ namespace DataLayer
   {
     // Get User by UserID
 
-    public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
+    public static bool GetUserByID(int UserID, ref string UserName, ref string Password, ref bool IsActive, ref int PersonID)
     {
       bool IsFound = false;
       string Query = @"Select * From Users Where UserID =@UserID;";
@@ -39,10 +39,10 @@ namespace DataLayer
                 // User Found
                 IsFound = true;
 
-                PersonID = (int)reader["PersonID"];
                 UserName = (string)reader["UserName"];
                 Password = (string)reader["Password"];
                 IsActive = (bool)reader["IsActive"];
+                PersonID = (int)reader["PersonID"];
               }
 
             }
@@ -67,7 +67,7 @@ namespace DataLayer
                  ref string Password, ref bool IsActive)
     {
       bool IsFound = false;
-      string Query = @"Select * From Users Where PersonID =@PersonID;";
+      string Query = @"Select * From Users Where PersonID=@PersonID;";
 
       try { 
       using (SqlConnection Connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
@@ -115,7 +115,7 @@ namespace DataLayer
 
     // Get User by UserName and Password
     public static bool GetUserInfoByUsernameAndPassword(string UserName, string Password,
-          ref int UserID, ref int PersonID, ref bool IsActive)
+          ref int UserID, ref bool IsActive, ref int PersonID)
     {
       bool IsFound = false;
 
@@ -139,8 +139,8 @@ namespace DataLayer
                 IsFound = true;
 
                 UserID = (int)reader["UserID"];
-                PersonID = (int)reader["PersonID"];
                 IsActive = (bool)reader["IsActive"];
+                PersonID = (int)reader["PersonID"];
 
               }
               else
@@ -166,12 +166,12 @@ namespace DataLayer
     }
 
     // Add new User
-    public static int AddNewUser(int PersonID, string UserName, string Password, bool IsActive)
+    public static int AddNewUser(string UserName, string Password, bool IsActive, int PersonID )
     {
       int UserID = -1;
 
-        string Query = @"Insert into Users (PersonID,UserName,Password,IsActive)
-                         values(@PersonID,@UserName,@Password,@IsActive);
+        string Query = @"Insert into Users (UserName,Password,IsActive,PersonID)
+                         values(@UserName,@Password,@IsActive,@PersonID);
                          SELECT SCOPE_IDENTITY();";
 
       try
@@ -181,10 +181,10 @@ namespace DataLayer
           using(SqlCommand command = new SqlCommand(Query, Connection))
           {
 
-            command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@UserName", UserName);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@PersonID", PersonID);
               
             Connection.Open();
             object result = command.ExecuteScalar();
@@ -210,15 +210,14 @@ namespace DataLayer
     }
 
     // Update User
-    public static bool UpdateUser(int UserID, int PersonID, string UserName,
+    public static bool UpdateUser(int UserID, string UserName,
            string Password, bool IsActive)
     {
       int rowsAffected = 0;
 
       
       string Query = @"Update Users
-                         set PersonID = @PersonID,
-                                UserName = @UserName,
+                         set UserName = @UserName,
                                 Password = @Password,
                                 IsActive = @IsActive
                                 where UserID = @UserID";
@@ -230,7 +229,6 @@ namespace DataLayer
           Connection.Open();
           using(SqlCommand command = new SqlCommand(Query, Connection))
           {
-            command.Parameters.AddWithValue("@PersonID", PersonID);
             command.Parameters.AddWithValue("@UserName", UserName);
             command.Parameters.AddWithValue("@Password", Password);
             command.Parameters.AddWithValue("@IsActive", IsActive);
@@ -259,9 +257,7 @@ namespace DataLayer
     {
       DataTable dtUsers = new DataTable();
 
-      string Query = @"Select Users.UserID, Users.PersonID, People.FirstName + ' ' + People.SecondName + ' '+
-                        IsNull(People.ThirdName,'')+ ' '+ People.LastName as FullName, Users.UserName,
-                        Users.IsActive from Users inner join People on Users.PersonID = People.PersonID; ";
+      string Query = @"Select * From UsersView ";
 
       try
       {

@@ -19,12 +19,6 @@ namespace BusinessLayer
       set { _UserID = value; }
     }
 
-    private int _PersonID;
-    public int PersonID
-    {
-      get { return _PersonID; }
-      set { _PersonID = value; }
-    }
     
     private string _UserName;
     public string UserName 
@@ -47,25 +41,32 @@ namespace BusinessLayer
       set { IsActive = value; } 
     }
 
+    private int _PersonID;
+    public int PersonID
+    {
+      get { return _PersonID; }
+      set { _PersonID = value; }
+    }
+
     public clsUsers()
     {
       this.UserID = -1;
-      this._PersonID = -1;
       this.UserName = string.Empty;
       this.Password = string.Empty;
       this.IsActive = false;
+      this._PersonID = -1;
 
       this._Mode = enMode.AddNew;
     }
 
 
-    private clsUsers(int UserID, int PeronID, string UserName, string Password, bool IsActive)
+    private clsUsers(int UserID, string UserName, string Password, bool IsActive, int PeronID)
     {
       this.UserID = UserID;
-      this._PersonID = PeronID;
       this.UserName = UserName;
       this.Password = Password;
       this.IsActive = IsActive;
+      this.PersonID = PeronID;
 
       this._Mode = enMode.Update;
      
@@ -73,12 +74,12 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      this.UserID = clsUserData.AddNewUser(this.PersonID, this.UserName, this.Password, this.IsActive);
+      this.UserID = clsUserData.AddNewUser(this.UserName, this.Password, this.IsActive, this.PersonID);
 
       return (this.UserID !=-1);
     }
 
-    private bool _Update() => clsUserData.UpdateUser(this.UserID, this.PersonID, this.UserName, this.Password, this.IsActive);
+    private bool _Update() => clsUserData.UpdateUser(this.UserID, this.UserName, this.Password, this.IsActive);
 
 
     public static clsUsers Find(int UserID)
@@ -87,15 +88,15 @@ namespace BusinessLayer
       string UserName = string.Empty, Password = string.Empty;
       bool IsActive = false;
 
-      bool IsFound = clsUserData.GetUserByID(UserID, ref PersonID, ref UserName, ref Password, ref IsActive);
+      bool IsFound = clsUserData.GetUserByID(UserID, ref UserName, ref Password, ref IsActive,ref PersonID);
 
       if (IsFound)
-        return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
+        return new clsUsers(UserID, UserName, Password, IsActive,PersonID);
       else
         return null;
     }
 
-    public static clsUsers Find(string PhoneNumber) => null;
+    public static clsUsers Find(string PhoneNumber) => clsUsers.Find(PhoneNumber);
 
     public static bool IsExist(string UserName) => clsUserData.IsUserExist(UserName);
 
