@@ -16,18 +16,17 @@ namespace DataLayer
     /// <summary>
     /// Add New payment
     /// </summary>
-    /// <param name="PersonID"></param>
-    /// <param name="MemberShipID"></param>
-    /// <param name="CreatedByID"></param>
-    /// <param name="Total"></param>
+    /// <param name="SubscriptionID"></param>
     /// <param name="PaymentDate"></param>
+    /// <param name="Total"></param>
+    /// <param name="CreatedByID"></param>
     /// <returns>PaymentID: int</returns>
-    public static int AddNewPayment(int PersonID, int MemberShipID, int CreatedByID, float Total, DateTime PaymentDate)
+    public static int AddNewPayment( int SubscriptionID, DateTime PaymentDate, float Total, int CreatedByID)
     {
       int PaymentID = -1;
 
-      string Query = @"Insert into Payments(PersonID,MemberShipID,CreatedByID,Total,PaymentDate)
-         Values(@PersonID,@MemberShipID,@CreatedByID,@Total,@PaymentDate)
+      string Query = @"Insert into Payments(SubscriptionID,PaymentDate,Total,CreatedByID)
+         Values(@SubscriptionID,@PaymentDate,@Total,@CreatedByID)
          Select SCOPE_IDENTITY()";
 
       try
@@ -41,12 +40,10 @@ namespace DataLayer
           using (SqlCommand command = new SqlCommand(Query, Connection))
           {
             // Adding parameters
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
-            command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
-            command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
-            command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@SubscriptionID", SubscriptionID);
             command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
+            command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
            
 
             // resiving object from DB
@@ -77,23 +74,22 @@ namespace DataLayer
     /// Update payment
     /// </summary>
     /// <param name="PaymentID"></param>
-    /// <param name="PersonID"></param>
-    /// <param name="MemberShipID"></param>
-    /// <param name="CreatedByID"></param>
-    /// <param name="Total"></param>
+    /// <param name="SubscriptionID"></param>
     /// <param name="PaymentDate"></param>
+    /// <param name="Total"></param>
+    /// <param name="CreatedByID"></param>
     /// <returns>Boolen</returns>
-    public static bool Update(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total,DateTime PaymentDate)
+    public static bool Update(int PaymentID, int SubscriptionID, DateTime PaymentDate, float Total, int CreatedByID)
     {
       int EffectedRow = 0;
 
       string Query = @"Update Payments
-        set PersonID=@PersonID,
-        MemberShipID=@MemberShipID,
-        CreatedByID = @CreatedByID,
-        Total=@Total,
+        set SubscriptionID=@SubscriptionID,
         PaymentDate=@PaymentDate
+        Total=@Total,
+        CreatedByID = @CreatedByID,
         Where PaymentID=@PaymentID";
+        
 
       try
       {
@@ -107,11 +103,10 @@ namespace DataLayer
           using (SqlCommand command = new SqlCommand(Query, connection))
           {
             // Adding Paramters
-            command.Parameters.AddWithValue("@PersonID", PersonID);
-            command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
-            command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
-            command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@SubscriptionID", SubscriptionID);
             command.Parameters.AddWithValue("@PaymentDate", PaymentDate);
+            command.Parameters.AddWithValue("@Total", Total);
+            command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
 
 
             // rows effected  
@@ -139,14 +134,13 @@ namespace DataLayer
     /// Find Payment by ID
     /// </summary>
     /// <param name="PaymentID"></param>
-    /// <param name="PersonID"></param>
-    /// <param name="MemberShipID"></param>
-    /// <param name="CreatedByID"></param>
-    /// <param name="Total"></param>
+    /// <param name="SubscriptionID"></param>
     /// <param name="PaymentDate"></param>
+    /// <param name="Total"></param>
+    /// <param name="CreatedByID"></param>
     /// <returns>Fill Properties and return Boolen</returns>
-    public static bool FindPaymentByID(int PaymentID,ref int PersonID,ref int MemberShipID, ref int CreatedByID, 
-      ref float Total,ref DateTime PaymentDate)
+    public static bool FindPaymentByID(int PaymentID,ref int SubscriptionID, ref DateTime PaymentDate, 
+        ref float Total, ref int CreatedByID)
     {
 
       bool IsFound = false;
@@ -176,11 +170,10 @@ namespace DataLayer
                 IsFound = true;
                 // here we will fill the props
                 PaymentID = (int)reader["PaymentID"];
-                PersonID = (int)reader["PersonID"];
-                MemberShipID = (int)reader["MemberShipID"];
-                CreatedByID = (int)reader["CreatedByID"];
-                Total = (float)reader["Total"];
+                SubscriptionID = (int)reader["SubscriptionID"];
                 PaymentDate = (DateTime)reader["PaymentDate"];
+                Total = (float)reader["Total"];
+                CreatedByID = (int)reader["CreatedByID"];
 
               }
             }

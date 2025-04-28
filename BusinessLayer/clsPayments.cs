@@ -21,18 +21,25 @@ namespace BusinessLayer
       set { _PaymentID = value; }
     }
 
-    private int _PersonID;
-    public int PersonID
+    private int _SubscriptionID;
+    public int SubscriptionID
     {
-      get { return _PersonID; }
-      set { _PersonID = value; }
+      get { return _SubscriptionID; }
+      set { value = _SubscriptionID; }
     }
 
-    private int _MemberShipID;
-    public int MemberShipID
+    private DateTime _PaymentDate;
+    public DateTime PaymentDate
     {
-      get { return _MemberShipID; }
-      set { value = _MemberShipID; }
+      get { return _PaymentDate; }
+      set { value = _PaymentDate; }
+    }
+
+    private float _Total;
+    public float Total
+    {
+      get { return _Total; }
+      set { _Total = value; }
     }
 
     private int _CreatedByID;
@@ -42,44 +49,32 @@ namespace BusinessLayer
       set { value = _CreatedByID; }
     }
 
-    private float _Totla;
-    public float Total;
-
-    private DateTime _PaymentDate;
-    public DateTime PaymentDate
-    {
-      get { return _PaymentDate; }
-      set { value = _PaymentDate; }
-    }
 
     public clsPayments()
     {
       this.PaymentID = -1;
-      this.PersonID = -1;
-      this.MemberShipID = -1;
-      this.CreatedByID = -1;
-      this.Total = 0;
+      this.SubscriptionID = -1;
       this.PaymentDate = DateTime.Now;
+      this.Total = 0;
+      this.CreatedByID = -1;
 
       _Mode = enMode.AddNew;
     }
 
-    private clsPayments(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total, DateTime PaymentDate)
+    private clsPayments(int PaymentID, int SubscriptionID, DateTime PaymentDate, float Total, int CreatedByID)
     {
       this.PaymentID = PaymentID;
-      this.PersonID = PersonID;
-      this.MemberShipID = MemberShipID;
-      this.CreatedByID = CreatedByID;
-      this.Total = Total;
+      this.SubscriptionID = SubscriptionID;
       this.PaymentDate = PaymentDate;
+      this.Total = Total;
+      this.CreatedByID = CreatedByID;
 
       _Mode = enMode.Update;
     }
 
     private bool _AddNew() 
     {
-      this.PaymentID = clsPaymentData.AddNewPayment(this.PersonID, this.MemberShipID, this.CreatedByID, 
-        this.Total,this.PaymentDate);
+      this.PaymentID = clsPaymentData.AddNewPayment(this.SubscriptionID, this.PaymentDate, this.Total, this.CreatedByID);
 
       return (this.PaymentID != -1);
     
@@ -87,21 +82,20 @@ namespace BusinessLayer
 
     private bool _Update()
     {
-      return clsPaymentData.Update(this.PaymentID, this.PersonID, this.MemberShipID, this.CreatedByID,
-        this.Total,this.PaymentDate);
+      return clsPaymentData.Update(this.PaymentID, this.SubscriptionID, this.PaymentDate,this.Total, this.CreatedByID);
     }
 
     public clsPayments Find(int PaymentID)
     {
-      int PersonID = -1, MemberShipID = -1, CreatedByID = -1;
+      int PersonID = -1, SubscriptionID = -1, CreatedByID = -1;
       float Total = 0;
       DateTime PaymentDate = DateTime.Now;
 
-      bool IsFound = clsPaymentData.FindPaymentByID(PaymentID, ref PersonID, ref MemberShipID, ref CreatedByID,
-        ref Total,ref PaymentDate);
+      bool IsFound = clsPaymentData.FindPaymentByID(PaymentID, ref SubscriptionID, ref PaymentDate,
+        ref Total, ref CreatedByID);
 
       if (IsFound)
-        return new clsPayments(PaymentID, PersonID, MemberShipID, CreatedByID, Total, PaymentDate);
+        return new clsPayments(PaymentID, SubscriptionID, PaymentDate, Total, CreatedByID);
       else
         return null;
     }
