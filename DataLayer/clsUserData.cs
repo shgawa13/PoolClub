@@ -17,8 +17,6 @@ namespace DataLayer
     public static bool GetUserByID(int UserID, ref int PersonID, ref string UserName, ref string Password, ref bool IsActive)
     {
       bool IsFound = false;
-
-     
       string Query = @"Select * From Users Where UserID =@UserID;";
 
       try

@@ -68,6 +68,7 @@ namespace BusinessLayer
       this.IsActive = IsActive;
 
       this._Mode = enMode.Update;
+     
     }
 
     private bool _AddNew()
@@ -92,7 +93,6 @@ namespace BusinessLayer
         return new clsUsers(UserID, PersonID, UserName, Password, IsActive);
       else
         return null;
-
     }
 
     public static clsUsers Find(string PhoneNumber) => null;
@@ -100,7 +100,6 @@ namespace BusinessLayer
     public static bool IsExist(string UserName) => clsUserData.IsUserExist(UserName);
 
     public static bool Delete(int UserID) => clsUserData.DeleteUser(UserID);
-
 
     public bool Save()
     {

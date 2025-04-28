@@ -10,8 +10,18 @@ using DataLayer;
 
 namespace DataLayer
 {
+  
   public class clsPaymentData
   {
+    /// <summary>
+    /// Add New payment
+    /// </summary>
+    /// <param name="PersonID"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="CreatedByID"></param>
+    /// <param name="Total"></param>
+    /// <param name="PaymentDate"></param>
+    /// <returns>PaymentID: int</returns>
     public static int AddNewPayment(int PersonID, int MemberShipID, int CreatedByID, float Total, DateTime PaymentDate)
     {
       int PaymentID = -1;
@@ -63,6 +73,16 @@ namespace DataLayer
 
     }
 
+    /// <summary>
+    /// Update payment
+    /// </summary>
+    /// <param name="PaymentID"></param>
+    /// <param name="PersonID"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="CreatedByID"></param>
+    /// <param name="Total"></param>
+    /// <param name="PaymentDate"></param>
+    /// <returns>Boolen</returns>
     public static bool Update(int PaymentID, int PersonID, int MemberShipID, int CreatedByID, float Total,DateTime PaymentDate)
     {
       int EffectedRow = 0;
@@ -115,6 +135,16 @@ namespace DataLayer
 
     }
 
+    /// <summary>
+    /// Find Payment by ID
+    /// </summary>
+    /// <param name="PaymentID"></param>
+    /// <param name="PersonID"></param>
+    /// <param name="MemberShipID"></param>
+    /// <param name="CreatedByID"></param>
+    /// <param name="Total"></param>
+    /// <param name="PaymentDate"></param>
+    /// <returns>Fill Properties and return Boolen</returns>
     public static bool FindPaymentByID(int PaymentID,ref int PersonID,ref int MemberShipID, ref int CreatedByID, 
       ref float Total,ref DateTime PaymentDate)
     {
@@ -172,8 +202,11 @@ namespace DataLayer
       return IsFound;
     }
 
-
-    public static DataTable GetAllPeople()
+    /// <summary>
+    /// Get all payments
+    /// </summary>
+    /// <returns>DataTable</returns>
+    public static DataTable GetAllPayments()
     {
       DataTable dtPayments = new DataTable();
 
@@ -213,7 +246,11 @@ namespace DataLayer
       return dtPayments;
     }
 
-
+    /// <summary>
+    /// Delete payment
+    /// </summary>
+    /// <param name="PaymentID"></param>
+    /// <returns>Boolen</returns>
     public static bool DeletePayment(int PaymentID)
     {
       int IsDeleted = -1;
