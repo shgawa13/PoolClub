@@ -87,7 +87,7 @@ namespace BusinessLayer
 
     public clsPayments Find(int PaymentID)
     {
-      int PersonID = -1, SubscriptionID = -1, CreatedByID = -1;
+      int SubscriptionID = -1, CreatedByID = -1;
       float Total = 0;
       DateTime PaymentDate = DateTime.Now;
 
