@@ -53,6 +53,7 @@ namespace DataLayer
       catch (Exception ex)
       {
         IsFound = false;
+        Console.WriteLine($"Error: {ex}");
       }
       finally
       {
@@ -103,6 +104,7 @@ namespace DataLayer
       catch (Exception ex)
       {
         IsFound = false;
+        Console.WriteLine($"Error: {ex}");
       }
       finally
       {
@@ -156,6 +158,7 @@ namespace DataLayer
       catch (Exception ex)
       {
         IsFound = false;
+        Console.WriteLine($"Error: {ex}");
       }
       finally
       {

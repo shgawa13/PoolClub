@@ -68,7 +68,7 @@ namespace BusinessLayer
     private bool _AddNew() 
     {
       this.MemberShipID = clsMemberShipData.AddNew(this.Type, this.Description, this.Price);
-      return (this.MemberShipID >0);
+      return (this.MemberShipID > 0);
     }
 
 
