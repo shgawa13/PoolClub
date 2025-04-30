@@ -77,6 +77,7 @@ namespace DataLayer
       {
         using (SqlConnection Connection = new SqlConnection(ConnectionString))
         {
+            Connection.Open();
           using (SqlCommand Command = new SqlCommand(Query, Connection))
           {
             Command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
@@ -84,7 +85,6 @@ namespace DataLayer
             Command.Parameters.AddWithValue("@Description", Description);
             Command.Parameters.AddWithValue("@Price", Price);
 
-            Connection.Open();
             rowsAffected = Command.ExecuteNonQuery();
           }
         }
