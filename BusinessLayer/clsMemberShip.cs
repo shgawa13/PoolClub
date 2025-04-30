@@ -9,7 +9,7 @@ namespace BusinessLayer
 {
   public class clsMemberShip
   {
-    public enum enType { Daimond =1,Gold=2,Slver=3};
+    public enum enType { Daimond =1,Gold=2,Silver=3};
 
     public enum enMode { AddNew=0, Update=1 }
     private enMode _Mode = enMode.AddNew;
