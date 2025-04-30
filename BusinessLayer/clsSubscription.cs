@@ -35,18 +35,18 @@ namespace BusinessLayer
       set { MemberShipID = value; }
     }
 
-    private DateTime _StartTime;
-    public DateTime StartTime
+    private DateTime _StartDate;
+    public DateTime StartDate
     {
-      get { return _StartTime; }
-      set { _StartTime = value; }
+      get { return _StartDate; }
+      set { _StartDate = value; }
     }
 
-    private DateTime _EndTime;
-    public DateTime EndTime
+    private DateTime _EndDate;
+    public DateTime EndDate
     {
-      get { return _EndTime; }
-      set { _EndTime = value; }
+      get { return _EndDate; }
+      set { _EndDate = value; }
     }
     
     public clsSubscription()
@@ -54,8 +54,8 @@ namespace BusinessLayer
       this.SubscriptionID = -1;
       this.PersonID = -1;
       this.MemberShipID = -1;
-      this.StartTime = DateTime.Now;
-      this.EndTime = DateTime.Now;
+      this.StartDate = DateTime.Now;
+      this.EndDate = DateTime.Now;
 
       _Mode = enMode.AddNew;
     }
@@ -66,22 +66,43 @@ namespace BusinessLayer
       this.SubscriptionID = SubscriptionID;
       this.PersonID = PersonID;
       this.MemberShipID = MemberShipID;
-      this.StartTime = Start;
-      this.EndTime = End;
+      this.StartDate = Start;
+      this.EndDate = End;
 
       _Mode = enMode.Update;
     }
 
 
-    private bool _AddNew() => false;
+    private bool _AddNew()
+    {
+      this.SubscriptionID = clsSubscriptionData.AddNew(this.PersonID, this.MemberShipID, this.StartDate, this.EndDate);
+      return (this.SubscriptionID > 0);
+    }
 
-    private bool _Update() => false;
+    private bool _Update()
+    {
+     return clsSubscriptionData.Update(this.SubscriptionID,this.PersonID,this.MemberShipID,this.StartDate,this.EndDate);
 
-    public clsSubscription Find(int SubscriptionID) => null;
+    }
 
-    public DataTable GetAllSubscriptions() => null;
+    public clsSubscription Find(int SubscriptionID)
+    {
+      int PersonID =-1, MemberShipID =-1;
+      DateTime StartDate = DateTime.Now, EndDate = DateTime.Now;
 
-    public bool Delete(int SubscriptionID) => false;
+      bool IsFound = clsSubscriptionData.GetSubscriptionByID(SubscriptionID, ref PersonID, ref MemberShipID, ref StartDate,
+        ref EndDate);
+
+      if (IsFound)
+        return new clsSubscription(SubscriptionID, PersonID, MemberShipID, StartDate, EndDate);
+      else
+        return null;
+
+    }
+
+    public DataTable GetAllSubscriptions() => clsSubscriptionData.GetAllSubscriptions();
+
+    public bool Delete(int SubscriptionID) => clsSubscriptionData.Delete(SubscriptionID);
 
     public bool Save()
     {
@@ -99,7 +120,6 @@ namespace BusinessLayer
         case enMode.Update:
           return _Update();
       }
-
 
       return false;
     }

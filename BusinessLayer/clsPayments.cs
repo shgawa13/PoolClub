@@ -25,14 +25,14 @@ namespace BusinessLayer
     public int SubscriptionID
     {
       get { return _SubscriptionID; }
-      set { value = _SubscriptionID; }
+      set { _SubscriptionID = value ; }
     }
 
     private DateTime _PaymentDate;
     public DateTime PaymentDate
     {
       get { return _PaymentDate; }
-      set { value = _PaymentDate; }
+      set { _PaymentDate = value  ; }
     }
 
     private float _Total;
@@ -46,7 +46,7 @@ namespace BusinessLayer
     public int CreatedByID
     {
       get { return _CreatedByID; }
-      set { value = _CreatedByID; }
+      set { _CreatedByID = value; }
     }
 
 
