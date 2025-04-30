@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
@@ -64,16 +65,33 @@ namespace BusinessLayer
     }
 
 
-    private bool _AddNew() => false;
+    private bool _AddNew() 
+    {
+      this.MemberShipID = clsMemberShipData.AddNew(this.Type, this.Description, this.Price);
+      return (this.MemberShipID >0);
+    }
 
 
-    private bool _Update() => false;
+    private bool _Update() => clsMemberShipData.Update(this.MemberShipID,this.Type,this.Description,this.Price);
 
 
-    public clsMemberShip Find() => null;
+    public clsMemberShip Find(int MemberShipID)
+    {
+      short Type = 0;
+      string Description = string.Empty;
+      float Price = 0;
+
+      bool IsFound = clsMemberShipData.GetMemberShipByID(MemberShipID, ref Type, ref Description, ref Price);
+
+      if (IsFound)
+        return new clsMemberShip(MemberShipID, Type, Description, Price);
+      else
+        return null;
+      
+    }
 
 
-    public bool Delete(int MemeberShipID) => false;
+    public bool Delete(int MemeberShipID) => clsMemberShipData.Delete(MemeberShipID);
     
 
     public bool Save()
