@@ -53,25 +53,34 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\ctrlCardInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlCardInfo.Designer.cs">
+      <DependentUpon>ctrlCardInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PoolTable.cs">
+    <Compile Include="Controls\ctrlPoolTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PoolTable.Designer.cs">
-      <DependentUpon>PoolTable.cs</DependentUpon>
+    <Compile Include="Controls\ctrlPoolTable.Designer.cs">
+      <DependentUpon>ctrlPoolTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\ctrlCardInfo.resx">
+      <DependentUpon>ctrlCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PoolTable.resx">
-      <DependentUpon>PoolTable.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\ctrlPoolTable.resx">
+      <DependentUpon>ctrlPoolTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

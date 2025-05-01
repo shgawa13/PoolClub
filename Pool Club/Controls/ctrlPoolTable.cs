@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Pool_Club
 {
-  public partial class PoolTable : UserControl
+  public partial class ctrlPoolTable : UserControl
   {
     
 
-    public PoolTable()
+    public ctrlPoolTable()
     {
       InitializeComponent();
     }

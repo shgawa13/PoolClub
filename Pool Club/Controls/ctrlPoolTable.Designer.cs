@@ -1,6 +1,6 @@
 ﻿namespace Pool_Club
 {
-  partial class PoolTable
+  partial class ctrlPoolTable
   {
     /// <summary>
     /// Required designer variable.
