@@ -26,9 +26,9 @@ namespace Pool_Club
     private void HandleLayout()
     {
       if (IsOpened)
-        pnlDashBoard.Width = 100;
+        pnlMenu.Width = 100;
       else
-        pnlDashBoard.Width = 200;
+        pnlMenu.Width = 200;
 
       IsOpened = !IsOpened;
 
@@ -43,5 +43,6 @@ namespace Pool_Club
       this.RightToLeft = RightToLeft.Yes;
     }
 
+    
   }
 }
