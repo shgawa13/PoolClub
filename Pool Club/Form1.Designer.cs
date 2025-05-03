@@ -29,26 +29,28 @@
     private void InitializeComponent()
     {
       this.pnlMenu = new System.Windows.Forms.Panel();
+      this.btnSettings = new FontAwesome.Sharp.IconButton();
       this.btnLogout = new FontAwesome.Sharp.IconButton();
       this.btnVip = new FontAwesome.Sharp.IconButton();
       this.btnPlayers = new FontAwesome.Sharp.IconButton();
       this.btnTables = new FontAwesome.Sharp.IconButton();
       this.pnlLine = new System.Windows.Forms.Panel();
       this.btnNewGame = new FontAwesome.Sharp.IconButton();
-      this.pnlLogo = new System.Windows.Forms.Panel();
+      this.btnLogo = new System.Windows.Forms.Panel();
       this.button2 = new System.Windows.Forms.Button();
-      this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+      this.panelTitlebar = new System.Windows.Forms.FlowLayoutPanel();
       this.button1 = new System.Windows.Forms.Button();
+      this.btnHideText = new System.Windows.Forms.Button();
       this.panel1 = new System.Windows.Forms.Panel();
       this.panel2 = new System.Windows.Forms.Panel();
-      this.btnSettings = new FontAwesome.Sharp.IconButton();
+      this.iconCurrentChild = new FontAwesome.Sharp.IconButton();
       this.pnlMenu.SuspendLayout();
-      this.flowLayoutPanel1.SuspendLayout();
       this.SuspendLayout();
       // 
       // pnlMenu
       // 
       this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.pnlMenu.Controls.Add(this.iconCurrentChild);
       this.pnlMenu.Controls.Add(this.btnSettings);
       this.pnlMenu.Controls.Add(this.btnLogout);
       this.pnlMenu.Controls.Add(this.btnVip);
@@ -56,13 +58,36 @@
       this.pnlMenu.Controls.Add(this.btnTables);
       this.pnlMenu.Controls.Add(this.pnlLine);
       this.pnlMenu.Controls.Add(this.btnNewGame);
-      this.pnlMenu.Controls.Add(this.pnlLogo);
+      this.pnlMenu.Controls.Add(this.btnLogo);
       this.pnlMenu.Dock = System.Windows.Forms.DockStyle.Left;
       this.pnlMenu.Location = new System.Drawing.Point(0, 0);
       this.pnlMenu.MaximumSize = new System.Drawing.Size(200, 0);
       this.pnlMenu.Name = "pnlMenu";
       this.pnlMenu.Size = new System.Drawing.Size(200, 584);
       this.pnlMenu.TabIndex = 0;
+      // 
+      // btnSettings
+      // 
+      this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+      this.btnSettings.FlatAppearance.BorderSize = 0;
+      this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSettings.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+      this.btnSettings.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnSettings.IconSize = 32;
+      this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnSettings.Location = new System.Drawing.Point(0, 464);
+      this.btnSettings.Name = "btnSettings";
+      this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.btnSettings.Size = new System.Drawing.Size(200, 60);
+      this.btnSettings.TabIndex = 10;
+      this.btnSettings.Tag = "Settings";
+      this.btnSettings.Text = "Settings";
+      this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnSettings.UseVisualStyleBackColor = true;
       // 
       // btnLogout
       // 
@@ -81,6 +106,7 @@
       this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnLogout.Size = new System.Drawing.Size(200, 60);
       this.btnLogout.TabIndex = 9;
+      this.btnLogout.Tag = "Logout";
       this.btnLogout.Text = "Logout";
       this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -103,10 +129,12 @@
       this.btnVip.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnVip.Size = new System.Drawing.Size(200, 60);
       this.btnVip.TabIndex = 8;
+      this.btnVip.Tag = "VIP";
       this.btnVip.Text = "VIP";
       this.btnVip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnVip.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnVip.UseVisualStyleBackColor = true;
+      this.btnVip.Click += new System.EventHandler(this.btnVip_Click);
       // 
       // btnPlayers
       // 
@@ -125,10 +153,12 @@
       this.btnPlayers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnPlayers.Size = new System.Drawing.Size(200, 60);
       this.btnPlayers.TabIndex = 7;
+      this.btnPlayers.Tag = "Players";
       this.btnPlayers.Text = "Players";
       this.btnPlayers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnPlayers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnPlayers.UseVisualStyleBackColor = true;
+      this.btnPlayers.Click += new System.EventHandler(this.btnPlayers_Click);
       // 
       // btnTables
       // 
@@ -147,10 +177,12 @@
       this.btnTables.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnTables.Size = new System.Drawing.Size(200, 60);
       this.btnTables.TabIndex = 6;
+      this.btnTables.Tag = "Tables";
       this.btnTables.Text = "Tables";
       this.btnTables.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnTables.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnTables.UseVisualStyleBackColor = true;
+      this.btnTables.Click += new System.EventHandler(this.btnTables_Click);
       // 
       // pnlLine
       // 
@@ -177,27 +209,29 @@
       this.btnNewGame.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnNewGame.Size = new System.Drawing.Size(200, 60);
       this.btnNewGame.TabIndex = 1;
+      this.btnNewGame.Tag = "New Game";
       this.btnNewGame.Text = "New Game";
       this.btnNewGame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnNewGame.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnNewGame.UseVisualStyleBackColor = true;
+      this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
       // 
-      // pnlLogo
+      // btnLogo
       // 
-      this.pnlLogo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-      this.pnlLogo.BackColor = System.Drawing.Color.Transparent;
-      this.pnlLogo.BackgroundImage = global::Pool_Club.Properties.Resources.gzexperts_logo;
-      this.pnlLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-      this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
-      this.pnlLogo.Location = new System.Drawing.Point(0, 0);
-      this.pnlLogo.Margin = new System.Windows.Forms.Padding(0);
-      this.pnlLogo.Name = "pnlLogo";
-      this.pnlLogo.Size = new System.Drawing.Size(200, 100);
-      this.pnlLogo.TabIndex = 0;
+      this.btnLogo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+      this.btnLogo.BackColor = System.Drawing.Color.Transparent;
+      this.btnLogo.BackgroundImage = global::Pool_Club.Properties.Resources.gzexperts_logo;
+      this.btnLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.btnLogo.Dock = System.Windows.Forms.DockStyle.Top;
+      this.btnLogo.Location = new System.Drawing.Point(0, 0);
+      this.btnLogo.Margin = new System.Windows.Forms.Padding(0);
+      this.btnLogo.Name = "btnLogo";
+      this.btnLogo.Size = new System.Drawing.Size(200, 100);
+      this.btnLogo.TabIndex = 0;
       // 
       // button2
       // 
-      this.button2.Location = new System.Drawing.Point(100, 3);
+      this.button2.Location = new System.Drawing.Point(326, 208);
       this.button2.Name = "button2";
       this.button2.Size = new System.Drawing.Size(94, 30);
       this.button2.TabIndex = 1;
@@ -206,26 +240,34 @@
       this.button2.UseVisualStyleBackColor = true;
       this.button2.Click += new System.EventHandler(this.button2_Click);
       // 
-      // flowLayoutPanel1
+      // panelTitlebar
       // 
-      this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
-      this.flowLayoutPanel1.Controls.Add(this.button1);
-      this.flowLayoutPanel1.Controls.Add(this.button2);
-      this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-      this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 0);
-      this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-      this.flowLayoutPanel1.Size = new System.Drawing.Size(777, 69);
-      this.flowLayoutPanel1.TabIndex = 1;
+      this.panelTitlebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.panelTitlebar.Dock = System.Windows.Forms.DockStyle.Top;
+      this.panelTitlebar.Location = new System.Drawing.Point(200, 0);
+      this.panelTitlebar.Name = "panelTitlebar";
+      this.panelTitlebar.Size = new System.Drawing.Size(777, 69);
+      this.panelTitlebar.TabIndex = 1;
       // 
       // button1
       // 
-      this.button1.Location = new System.Drawing.Point(3, 3);
+      this.button1.Location = new System.Drawing.Point(229, 204);
       this.button1.Name = "button1";
       this.button1.Size = new System.Drawing.Size(91, 38);
       this.button1.TabIndex = 0;
       this.button1.Text = "button1";
       this.button1.UseVisualStyleBackColor = true;
       this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
+      // btnHideText
+      // 
+      this.btnHideText.Location = new System.Drawing.Point(426, 204);
+      this.btnHideText.Name = "btnHideText";
+      this.btnHideText.Size = new System.Drawing.Size(91, 38);
+      this.btnHideText.TabIndex = 2;
+      this.btnHideText.Text = "Hide Text";
+      this.btnHideText.UseVisualStyleBackColor = true;
+      this.btnHideText.Click += new System.EventHandler(this.btnHideText_Click);
       // 
       // panel1
       // 
@@ -245,27 +287,18 @@
       this.panel2.Size = new System.Drawing.Size(2, 513);
       this.panel2.TabIndex = 3;
       // 
-      // btnSettings
+      // iconCurrentChild
       // 
-      this.btnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.btnSettings.FlatAppearance.BorderSize = 0;
-      this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSettings.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSettings.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
-      this.btnSettings.IconColor = System.Drawing.Color.WhiteSmoke;
-      this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnSettings.IconSize = 32;
-      this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnSettings.Location = new System.Drawing.Point(0, 464);
-      this.btnSettings.Name = "btnSettings";
-      this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnSettings.Size = new System.Drawing.Size(200, 60);
-      this.btnSettings.TabIndex = 10;
-      this.btnSettings.Text = "Settings";
-      this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnSettings.UseVisualStyleBackColor = true;
+      this.iconCurrentChild.FlatAppearance.BorderSize = 0;
+      this.iconCurrentChild.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconCurrentChild.IconChar = FontAwesome.Sharp.IconChar.NotesMedical;
+      this.iconCurrentChild.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.iconCurrentChild.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconCurrentChild.Location = new System.Drawing.Point(69, 392);
+      this.iconCurrentChild.Name = "iconCurrentChild";
+      this.iconCurrentChild.Size = new System.Drawing.Size(50, 43);
+      this.iconCurrentChild.TabIndex = 0;
+      this.iconCurrentChild.UseVisualStyleBackColor = true;
       // 
       // Form1
       // 
@@ -273,9 +306,12 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.BackColor = System.Drawing.Color.LightGray;
       this.ClientSize = new System.Drawing.Size(977, 584);
+      this.Controls.Add(this.button1);
       this.Controls.Add(this.panel2);
+      this.Controls.Add(this.button2);
       this.Controls.Add(this.panel1);
-      this.Controls.Add(this.flowLayoutPanel1);
+      this.Controls.Add(this.btnHideText);
+      this.Controls.Add(this.panelTitlebar);
       this.Controls.Add(this.pnlMenu);
       this.ImeMode = System.Windows.Forms.ImeMode.Off;
       this.MinimumSize = new System.Drawing.Size(993, 623);
@@ -283,7 +319,6 @@
       this.RightToLeftLayout = true;
       this.Text = "Form1";
       this.pnlMenu.ResumeLayout(false);
-      this.flowLayoutPanel1.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -291,11 +326,11 @@
     #endregion
 
     private System.Windows.Forms.Panel pnlMenu;
-    private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+    private System.Windows.Forms.FlowLayoutPanel panelTitlebar;
     private System.Windows.Forms.Button button1;
     private System.Windows.Forms.Panel panel1;
     private System.Windows.Forms.Panel panel2;
-    private System.Windows.Forms.Panel pnlLogo;
+    private System.Windows.Forms.Panel btnLogo;
     private System.Windows.Forms.Button button2;
     private FontAwesome.Sharp.IconButton btnNewGame;
     private System.Windows.Forms.Panel pnlLine;
@@ -304,6 +339,8 @@
     private FontAwesome.Sharp.IconButton btnTables;
     private FontAwesome.Sharp.IconButton btnLogout;
     private FontAwesome.Sharp.IconButton btnSettings;
+    private System.Windows.Forms.Button btnHideText;
+    private FontAwesome.Sharp.IconButton iconCurrentChild;
   }
 }
 
