@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using Pool_Club.Games;
+using Pool_Club.Players;
+using Pool_Club.Settings;
+using Pool_Club.Tables;
+using Pool_Club.Vip;
 
 namespace Pool_Club
 {
@@ -92,12 +97,12 @@ namespace Pool_Club
       childForm.TopLevel = false;
       childForm.FormBorderStyle = FormBorderStyle.None;
       childForm.Dock = DockStyle.Fill;
-      //panelDesktop.Controls.Add(childForm);
-      //childForm.Size = panelDesktop.Size;
-      //panelDesktop.Tag = childForm;
-      //childForm.BringToFront();
-      //childForm.Show();
-      //lblTitleChild.Text = childForm.Text;
+      panelDesktop.Controls.Add(childForm);
+      childForm.Size = panelDesktop.Size;
+      panelDesktop.Tag = childForm;
+      childForm.BringToFront();
+      childForm.Show();
+      lblTitleChild.Text = childForm.Text;
     }
 
     //Events
@@ -170,22 +175,46 @@ namespace Pool_Club
 
     private void btnNewGame_Click(object sender, EventArgs e)
     {
+      OpenChildForm(new frmNewGame());
       ActivateButton(sender, RGBColors.color1);
     }
 
     private void btnPlayers_Click(object sender, EventArgs e)
     {
+      OpenChildForm(new frmPlayers());
       ActivateButton(sender, RGBColors.color2);
     }
 
     private void btnTables_Click(object sender, EventArgs e)
     {
+      OpenChildForm(new frmTables());
       ActivateButton(sender, RGBColors.color3);
     }
 
     private void btnVIP_Click(object sender, EventArgs e)
     {
+      OpenChildForm(new frmVip());
       ActivateButton(sender, RGBColors.color4);
     }
+
+    private void iconCurrentChild_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    
+
+    private void Reset()
+    {
+      DisableButton();
+      leftBorderBtn.Visible = false;
+    }
+
+    private void btnLogo_MouseClick(object sender, MouseEventArgs e)
+    {
+      Reset();
+    }
+
+    
   }
 }
