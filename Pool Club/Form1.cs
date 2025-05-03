@@ -104,11 +104,11 @@ namespace Pool_Club
     //Reset
 
 
-    private void button1_Click(object sender, EventArgs e)
-    {
-      HandleLayout();
-      ShowAndHideAllText();
-    }
+    //private void button1_Click(object sender, EventArgs e)
+    //{
+    //  HandleLayout();
+    //  ShowAndHideAllText();
+    //}
 
     private void HandleLayout()
     {
@@ -137,7 +137,7 @@ namespace Pool_Club
     {
       return new List<IconButton>
       {
-        btnNewGame,btnTables,btnPlayers,btnVip,btnSettings,btnLogout
+        btnNewGame,btnTables,btnPlayers,btnVIP,btnSettings,btnLogout
       };
     }
 
@@ -161,9 +161,11 @@ namespace Pool_Club
       }
     }
 
-    private void btnHideText_Click(object sender, EventArgs e)
+
+    private void btnNavMenu_Click(object sender, EventArgs e)
     {
-      //ShowAndHideAllText();
+      HandleLayout();
+      ShowAndHideAllText();
     }
 
     private void btnNewGame_Click(object sender, EventArgs e)
@@ -171,17 +173,17 @@ namespace Pool_Club
       ActivateButton(sender, RGBColors.color1);
     }
 
-    private void btnTables_Click(object sender, EventArgs e)
+    private void btnPlayers_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color2);
     }
 
-    private void btnVip_Click(object sender, EventArgs e)
+    private void btnTables_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color3);
     }
 
-    private void btnPlayers_Click(object sender, EventArgs e)
+    private void btnVIP_Click(object sender, EventArgs e)
     {
       ActivateButton(sender, RGBColors.color4);
     }
