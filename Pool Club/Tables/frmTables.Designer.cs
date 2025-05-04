@@ -48,7 +48,7 @@
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.label1);
       this.Name = "frmTables";
-      this.Text = "frmTables";
+      this.Text = "Tables";
       this.ResumeLayout(false);
       this.PerformLayout();
 

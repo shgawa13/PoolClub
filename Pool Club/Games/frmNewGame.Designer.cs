@@ -35,7 +35,7 @@
       // 
       this.label1.AutoSize = true;
       this.label1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(348, 210);
+      this.label1.Location = new System.Drawing.Point(295, 191);
       this.label1.Name = "label1";
       this.label1.Size = new System.Drawing.Size(180, 30);
       this.label1.TabIndex = 1;
@@ -48,7 +48,7 @@
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.label1);
       this.Name = "frmNewGame";
-      this.Text = "frmNewGame";
+      this.Text = "New Game";
       this.ResumeLayout(false);
       this.PerformLayout();
 

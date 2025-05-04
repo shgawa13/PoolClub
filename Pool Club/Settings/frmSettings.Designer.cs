@@ -48,7 +48,7 @@
       this.ClientSize = new System.Drawing.Size(800, 450);
       this.Controls.Add(this.label1);
       this.Name = "frmSettings";
-      this.Text = "frmSettings";
+      this.Text = "Settings";
       this.ResumeLayout(false);
       this.PerformLayout();
 
