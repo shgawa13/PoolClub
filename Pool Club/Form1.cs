@@ -212,6 +212,8 @@ namespace Pool_Club
 
     private void btnLogo_MouseClick(object sender, MouseEventArgs e)
     {
+      currentChildForm.Close();
+
       Reset();
     }
 
