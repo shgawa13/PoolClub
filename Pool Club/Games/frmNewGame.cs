@@ -16,5 +16,15 @@ namespace Pool_Club.Games
     {
       InitializeComponent();
     }
+
+    private void frmNewGame_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void ctrlExpertBtn1_Click(object sender, EventArgs e)
+    {
+
+    }
   }
 }

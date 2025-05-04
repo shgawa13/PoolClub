@@ -33,7 +33,7 @@
       // 
       // panel1
       // 
-      this.panel1.BackColor = System.Drawing.Color.Gray;
+      this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(34)))), ((int)(((byte)(38)))));
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
       this.panel1.Location = new System.Drawing.Point(0, 0);
       this.panel1.Name = "panel1";

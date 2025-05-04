@@ -59,6 +59,12 @@
     <Compile Include="Controls\ctrlCardInfo.Designer.cs">
       <DependentUpon>ctrlCardInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ctrlExpertBtn.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ctrlExpertBtn.Designer.cs">
+      <DependentUpon>ctrlExpertBtn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="Controls\ctrlCardInfo.resx">
       <DependentUpon>ctrlCardInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ctrlExpertBtn.resx">
+      <DependentUpon>ctrlExpertBtn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
