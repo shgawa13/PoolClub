@@ -16,5 +16,15 @@ namespace Pool_Club.Players
     {
       InitializeComponent();
     }
+
+    private void txtbSearch_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void cbFindBy_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
   }
 }
