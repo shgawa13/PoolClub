@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.pnlMenu = new System.Windows.Forms.Panel();
+      this.btnChallenges = new FontAwesome.Sharp.IconButton();
       this.btnSettings = new FontAwesome.Sharp.IconButton();
       this.btnLogout = new FontAwesome.Sharp.IconButton();
       this.btnVIP = new FontAwesome.Sharp.IconButton();
@@ -47,6 +48,7 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
       this.panelDesktop = new System.Windows.Forms.Panel();
+      this.btnBills = new FontAwesome.Sharp.IconButton();
       this.pnlMenu.SuspendLayout();
       this.panelTitleBar.SuspendLayout();
       this.SuspendLayout();
@@ -54,6 +56,8 @@
       // pnlMenu
       // 
       this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.pnlMenu.Controls.Add(this.btnBills);
+      this.pnlMenu.Controls.Add(this.btnChallenges);
       this.pnlMenu.Controls.Add(this.btnSettings);
       this.pnlMenu.Controls.Add(this.btnLogout);
       this.pnlMenu.Controls.Add(this.btnVIP);
@@ -70,6 +74,31 @@
       this.pnlMenu.Size = new System.Drawing.Size(200, 584);
       this.pnlMenu.TabIndex = 0;
       // 
+      // btnChallenges
+      // 
+      this.btnChallenges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.btnChallenges.Dock = System.Windows.Forms.DockStyle.Top;
+      this.btnChallenges.FlatAppearance.BorderSize = 0;
+      this.btnChallenges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnChallenges.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnChallenges.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnChallenges.IconChar = FontAwesome.Sharp.IconChar.Medal;
+      this.btnChallenges.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.btnChallenges.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnChallenges.IconSize = 40;
+      this.btnChallenges.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnChallenges.Location = new System.Drawing.Point(0, 340);
+      this.btnChallenges.Name = "btnChallenges";
+      this.btnChallenges.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.btnChallenges.Size = new System.Drawing.Size(200, 50);
+      this.btnChallenges.TabIndex = 8;
+      this.btnChallenges.Tag = "Challenges";
+      this.btnChallenges.Text = "Challenges";
+      this.btnChallenges.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnChallenges.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnChallenges.UseVisualStyleBackColor = false;
+      this.btnChallenges.Click += new System.EventHandler(this.btnChallenges_Click);
+      // 
       // btnSettings
       // 
       this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
@@ -83,10 +112,10 @@
       this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnSettings.IconSize = 40;
       this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnSettings.Location = new System.Drawing.Point(0, 464);
+      this.btnSettings.Location = new System.Drawing.Point(0, 484);
       this.btnSettings.Name = "btnSettings";
       this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnSettings.Size = new System.Drawing.Size(200, 60);
+      this.btnSettings.Size = new System.Drawing.Size(200, 50);
       this.btnSettings.TabIndex = 7;
       this.btnSettings.Tag = "Settings";
       this.btnSettings.Text = "Settings";
@@ -107,10 +136,10 @@
       this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnLogout.IconSize = 40;
       this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnLogout.Location = new System.Drawing.Point(0, 524);
+      this.btnLogout.Location = new System.Drawing.Point(0, 534);
       this.btnLogout.Name = "btnLogout";
       this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnLogout.Size = new System.Drawing.Size(200, 60);
+      this.btnLogout.Size = new System.Drawing.Size(200, 50);
       this.btnLogout.TabIndex = 6;
       this.btnLogout.Tag = "Logout";
       this.btnLogout.Text = "Logout";
@@ -131,10 +160,10 @@
       this.btnVIP.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnVIP.IconSize = 40;
       this.btnVIP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnVIP.Location = new System.Drawing.Point(0, 320);
+      this.btnVIP.Location = new System.Drawing.Point(0, 290);
       this.btnVIP.Name = "btnVIP";
       this.btnVIP.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnVIP.Size = new System.Drawing.Size(200, 60);
+      this.btnVIP.Size = new System.Drawing.Size(200, 50);
       this.btnVIP.TabIndex = 5;
       this.btnVIP.Tag = "VIP";
       this.btnVIP.Text = "VIP";
@@ -156,10 +185,10 @@
       this.btnPlayers.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnPlayers.IconSize = 40;
       this.btnPlayers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnPlayers.Location = new System.Drawing.Point(0, 260);
+      this.btnPlayers.Location = new System.Drawing.Point(0, 240);
       this.btnPlayers.Name = "btnPlayers";
       this.btnPlayers.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnPlayers.Size = new System.Drawing.Size(200, 60);
+      this.btnPlayers.Size = new System.Drawing.Size(200, 50);
       this.btnPlayers.TabIndex = 4;
       this.btnPlayers.Tag = "Players";
       this.btnPlayers.Text = "Players";
@@ -171,7 +200,7 @@
       // pnlLine
       // 
       this.pnlLine.BackColor = System.Drawing.Color.Gainsboro;
-      this.pnlLine.Location = new System.Drawing.Point(4, 417);
+      this.pnlLine.Location = new System.Drawing.Point(4, 460);
       this.pnlLine.Name = "pnlLine";
       this.pnlLine.Size = new System.Drawing.Size(193, 3);
       this.pnlLine.TabIndex = 0;
@@ -189,10 +218,10 @@
       this.btnTables.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnTables.IconSize = 40;
       this.btnTables.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnTables.Location = new System.Drawing.Point(0, 200);
+      this.btnTables.Location = new System.Drawing.Point(0, 190);
       this.btnTables.Name = "btnTables";
       this.btnTables.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnTables.Size = new System.Drawing.Size(200, 60);
+      this.btnTables.Size = new System.Drawing.Size(200, 50);
       this.btnTables.TabIndex = 3;
       this.btnTables.Tag = "Tables";
       this.btnTables.Text = "Tables";
@@ -217,7 +246,7 @@
       this.btnNewGame.Location = new System.Drawing.Point(0, 140);
       this.btnNewGame.Name = "btnNewGame";
       this.btnNewGame.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnNewGame.Size = new System.Drawing.Size(200, 60);
+      this.btnNewGame.Size = new System.Drawing.Size(200, 50);
       this.btnNewGame.TabIndex = 2;
       this.btnNewGame.Tag = "New Game";
       this.btnNewGame.Text = "New Game";
@@ -365,6 +394,31 @@
       this.panelDesktop.Size = new System.Drawing.Size(775, 501);
       this.panelDesktop.TabIndex = 4;
       // 
+      // btnBills
+      // 
+      this.btnBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.btnBills.Dock = System.Windows.Forms.DockStyle.Top;
+      this.btnBills.FlatAppearance.BorderSize = 0;
+      this.btnBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnBills.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnBills.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnBills.IconChar = FontAwesome.Sharp.IconChar.MoneyBills;
+      this.btnBills.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.btnBills.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnBills.IconSize = 40;
+      this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnBills.Location = new System.Drawing.Point(0, 390);
+      this.btnBills.Name = "btnBills";
+      this.btnBills.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.btnBills.Size = new System.Drawing.Size(200, 50);
+      this.btnBills.TabIndex = 9;
+      this.btnBills.Tag = "Bills";
+      this.btnBills.Text = "Bills";
+      this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnBills.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnBills.UseVisualStyleBackColor = false;
+      this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,6 +463,8 @@
     private FontAwesome.Sharp.IconButton iconUser;
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Panel panelDesktop;
+    private FontAwesome.Sharp.IconButton btnChallenges;
+    private FontAwesome.Sharp.IconButton btnBills;
   }
 }
 

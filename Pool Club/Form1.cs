@@ -27,7 +27,7 @@ namespace Pool_Club
     {
       InitializeComponent();
       leftBorderBtn = new Panel();
-      leftBorderBtn.Size = new Size(7, 60);
+      leftBorderBtn.Size = new Size(7, 50);
       pnlMenu.Controls.Add(leftBorderBtn);
 
       //Form
@@ -42,12 +42,14 @@ namespace Pool_Club
     private struct RGBColors
     {
       public static readonly Color color1 = Color.FromArgb(172, 126, 241);
-      public static readonly Color color2 = Color.FromArgb(249, 118, 176);
+      public static readonly Color color2 = Color.FromArgb(114, 137, 218);
       public static readonly Color color3 = Color.FromArgb(253, 138, 114);
       public static readonly Color color4 = Color.FromArgb(255, 215, 0);
-      public static readonly Color color5 = Color.FromArgb(249, 88, 155);
+      public static readonly Color color5 = Color.FromArgb(249, 118, 176);
       public static readonly Color color6 = Color.FromArgb(217, 3, 104);
+      public static readonly Color color7 = Color.FromArgb(70, 153, 89);
     }
+
     //Methods
     private void ActivateButton(object senderBtn, Color color)
     {
@@ -142,7 +144,7 @@ namespace Pool_Club
     {
       return new List<IconButton>
       {
-        btnNewGame,btnTables,btnPlayers,btnVIP,btnSettings,btnLogout
+        btnNewGame,btnTables,btnPlayers,btnVIP,btnSettings,btnLogout,btnBills,btnChallenges
       };
     }
 
@@ -217,6 +219,15 @@ namespace Pool_Club
       Reset();
     }
 
-    
+    private void btnBills_Click(object sender, EventArgs e)
+    {
+
+      ActivateButton(sender, RGBColors.color7);
+    }
+
+    private void btnChallenges_Click(object sender, EventArgs e)
+    {
+      ActivateButton(sender, RGBColors.color5);
+    }
   }
 }

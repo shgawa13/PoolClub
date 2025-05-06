@@ -38,7 +38,7 @@
       this.dgvPlayers = new System.Windows.Forms.DataGridView();
       this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
       this.ctrlExpertBtn1 = new Pool_Club.Controls.ctrlExpertBtn();
-      this.ctxmPlayers = new Syncfusion.Windows.Forms.Tools.ContextMenuStripEx();
+      this.ctxPlayers = new Syncfusion.Windows.Forms.Tools.ContextMenuStripEx();
       this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -49,7 +49,7 @@
       this.panel1.SuspendLayout();
       this.panelDown.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).BeginInit();
-      this.ctxmPlayers.SuspendLayout();
+      this.ctxPlayers.SuspendLayout();
       this.SuspendLayout();
       // 
       // panel1
@@ -141,6 +141,7 @@
       this.dgvPlayers.AllowUserToAddRows = false;
       this.dgvPlayers.AllowUserToDeleteRows = false;
       this.dgvPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+      this.dgvPlayers.ContextMenuStrip = this.ctxPlayers;
       this.dgvPlayers.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dgvPlayers.Location = new System.Drawing.Point(0, 55);
       this.dgvPlayers.Name = "dgvPlayers";
@@ -187,10 +188,10 @@
       this.ctrlExpertBtn1.TextColor = System.Drawing.Color.Azure;
       this.ctrlExpertBtn1.UseVisualStyleBackColor = false;
       // 
-      // ctxmPlayers
+      // ctxPlayers
       // 
-      this.ctxmPlayers.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.ctxmPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.ctxPlayers.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.ctxPlayers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.showInfoToolStripMenuItem,
             this.updateToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -198,48 +199,48 @@
             this.statusToolStripMenuItem,
             this.toolStripMenuItem2,
             this.deleteToolStripMenuItem});
-      this.ctxmPlayers.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(249)))));
-      this.ctxmPlayers.Name = "ctxmPlayers";
-      this.ctxmPlayers.Size = new System.Drawing.Size(181, 168);
+      this.ctxPlayers.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(236)))), ((int)(((byte)(249)))));
+      this.ctxPlayers.Name = "ctxPlayers";
+      this.ctxPlayers.Size = new System.Drawing.Size(177, 146);
       // 
       // addToolStripMenuItem
       // 
       this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-      this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+      this.addToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.addToolStripMenuItem.Text = "Membership";
       // 
       // updateToolStripMenuItem
       // 
       this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-      this.updateToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+      this.updateToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.updateToolStripMenuItem.Text = "Update";
       // 
       // toolStripMenuItem1
       // 
       this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-      this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+      this.toolStripMenuItem1.Size = new System.Drawing.Size(173, 6);
       // 
       // showInfoToolStripMenuItem
       // 
       this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
-      this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+      this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.showInfoToolStripMenuItem.Text = "Show Info";
       // 
       // statusToolStripMenuItem
       // 
       this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-      this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+      this.statusToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.statusToolStripMenuItem.Text = "Status";
       // 
       // toolStripMenuItem2
       // 
       this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-      this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+      this.toolStripMenuItem2.Size = new System.Drawing.Size(173, 6);
       // 
       // deleteToolStripMenuItem
       // 
       this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-      this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+      this.deleteToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.deleteToolStripMenuItem.Text = "Delete";
       // 
       // frmPlayers
@@ -258,7 +259,7 @@
       this.panelDown.ResumeLayout(false);
       this.panelDown.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).EndInit();
-      this.ctxmPlayers.ResumeLayout(false);
+      this.ctxPlayers.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -275,7 +276,7 @@
     private Controls.ctrlExpertBtn ctrlExpertBtn1;
     private System.Windows.Forms.DataGridView dgvPlayers;
     private Controls.ctrlExpertBtn btnAddPlayer;
-    private Syncfusion.Windows.Forms.Tools.ContextMenuStripEx ctxmPlayers;
+    private Syncfusion.Windows.Forms.Tools.ContextMenuStripEx ctxPlayers;
     private System.Windows.Forms.ToolStripMenuItem showInfoToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
