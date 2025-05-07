@@ -31,7 +31,6 @@
       this.pnlMenu = new System.Windows.Forms.Panel();
       this.btnChallenges = new FontAwesome.Sharp.IconButton();
       this.btnSettings = new FontAwesome.Sharp.IconButton();
-      this.btnLogout = new FontAwesome.Sharp.IconButton();
       this.btnVIP = new FontAwesome.Sharp.IconButton();
       this.btnPlayers = new FontAwesome.Sharp.IconButton();
       this.pnlLine = new System.Windows.Forms.Panel();
@@ -59,7 +58,6 @@
       this.pnlMenu.Controls.Add(this.btnBills);
       this.pnlMenu.Controls.Add(this.btnChallenges);
       this.pnlMenu.Controls.Add(this.btnSettings);
-      this.pnlMenu.Controls.Add(this.btnLogout);
       this.pnlMenu.Controls.Add(this.btnVIP);
       this.pnlMenu.Controls.Add(this.btnPlayers);
       this.pnlMenu.Controls.Add(this.pnlLine);
@@ -112,7 +110,7 @@
       this.btnSettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
       this.btnSettings.IconSize = 40;
       this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnSettings.Location = new System.Drawing.Point(0, 484);
+      this.btnSettings.Location = new System.Drawing.Point(0, 534);
       this.btnSettings.Name = "btnSettings";
       this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
       this.btnSettings.Size = new System.Drawing.Size(200, 50);
@@ -122,30 +120,6 @@
       this.btnSettings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnSettings.UseVisualStyleBackColor = false;
-      // 
-      // btnLogout
-      // 
-      this.btnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
-      this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.btnLogout.FlatAppearance.BorderSize = 0;
-      this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnLogout.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnLogout.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnLogout.IconChar = FontAwesome.Sharp.IconChar.RightFromBracket;
-      this.btnLogout.IconColor = System.Drawing.Color.WhiteSmoke;
-      this.btnLogout.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnLogout.IconSize = 40;
-      this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnLogout.Location = new System.Drawing.Point(0, 534);
-      this.btnLogout.Name = "btnLogout";
-      this.btnLogout.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnLogout.Size = new System.Drawing.Size(200, 50);
-      this.btnLogout.TabIndex = 6;
-      this.btnLogout.Tag = "Logout";
-      this.btnLogout.Text = "Logout";
-      this.btnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnLogout.UseVisualStyleBackColor = false;
       // 
       // btnVIP
       // 
@@ -200,7 +174,7 @@
       // pnlLine
       // 
       this.pnlLine.BackColor = System.Drawing.Color.Gainsboro;
-      this.pnlLine.Location = new System.Drawing.Point(4, 460);
+      this.pnlLine.Location = new System.Drawing.Point(4, 485);
       this.pnlLine.Name = "pnlLine";
       this.pnlLine.Size = new System.Drawing.Size(193, 3);
       this.pnlLine.TabIndex = 0;
@@ -458,7 +432,6 @@
     private FontAwesome.Sharp.IconButton btnTables;
     private FontAwesome.Sharp.IconButton btnNewGame;
     private FontAwesome.Sharp.IconButton btnSettings;
-    private FontAwesome.Sharp.IconButton btnLogout;
     private System.Windows.Forms.Label lblTitleChild;
     private FontAwesome.Sharp.IconButton iconUser;
     private System.Windows.Forms.Label label1;

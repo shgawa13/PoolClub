@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,6 +93,7 @@ namespace BusinessLayer
         return null;
     }
 
+    public static DataTable GetAllPeople() => clsPersonData.GetAllPeople();
 
     public static bool IsExist(string PhoneNumber) => clsPersonData.IsExist(PhoneNumber);
 

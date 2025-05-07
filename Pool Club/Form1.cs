@@ -144,7 +144,7 @@ namespace Pool_Club
     {
       return new List<IconButton>
       {
-        btnNewGame,btnTables,btnPlayers,btnVIP,btnSettings,btnLogout,btnBills,btnChallenges
+        btnNewGame,btnTables,btnPlayers,btnVIP,btnSettings,btnBills,btnChallenges
       };
     }
 
