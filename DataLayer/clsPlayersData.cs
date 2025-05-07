@@ -176,6 +176,111 @@ namespace DataLayer
       return IsFound;
     }
 
+    /// <summary>
+    /// Find Player by PhoneNumber.
+    /// </summary>
+    /// <param name="PhoneNumber"></param>
+    /// <param name="PlayerID"></param>
+    /// <param name="PersonID"></param>
+    /// <param name="HasMemberShip"></param>
+    /// <returns>Boolen</returns>
+    public static bool FindPlayerByPhoneNumber(string PhoneNumber,ref int PlayerID, ref int PersonID, ref bool HasMemberShip)
+    {
+
+      bool IsFound = false;
+
+      string Query = @"Select * from Players
+                     inner join People on Players.PersonID=People.PersonID
+                     where PhoneNumber=@PhoneNumber";
+
+      try
+      {
+
+        // Create Connection 
+        using (SqlConnection connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
+        {
+          // Open the connection 
+          connection.Open();
+          // Create Command 
+          using (SqlCommand command = new SqlCommand(Query, connection))
+          {
+            // Adding Paramters
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+
+            // rows effected  
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+
+              if (reader.Read())
+              {
+                IsFound = true;
+                // here we will fill the props
+                PlayerID = (int)reader["PlayerID"];
+                PersonID = (int)reader["PersonID"];
+                HasMemberShip = (bool)reader["HasMemberShip"];
+
+              }
+            }
+
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+        // Console.WriteLine($"");
+      }
+
+      return IsFound;
+    }
+
+
+    /// <summary>
+    /// Is Player Phone Number Exist.
+    /// </summary>
+    /// <param name="PhoneNumber"></param>
+    /// <returns>Boolen</returns>
+    public static bool IsExist(string PhoneNumber)
+    {
+      bool IsFound = false;
+
+      string Query = @"Select Found=1 From Players
+                     inner join People on Players.PersonID=People.PersonID
+                     Where PhoneNumber =@PhoneNumber;";
+
+      try
+      {
+        using (SqlConnection Connection = new SqlConnection(ConfigurationManager.AppSettings["ConnectionString"]))
+        {
+          Connection.Open();
+          using (SqlCommand command = new SqlCommand(Query, Connection))
+          {
+            command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
+
+            SqlDataReader reader = command.ExecuteReader();
+            IsFound = reader.HasRows;
+          }
+
+        }
+
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine($"Error: {ex.Message}");
+      }
+      finally
+      {
+
+      }
+
+      return IsFound;
+    }
+
 
     /// <summary>
     /// GetAllPlayers

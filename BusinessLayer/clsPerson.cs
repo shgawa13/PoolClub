@@ -97,7 +97,7 @@ namespace BusinessLayer
 
     public static bool IsExist(string PhoneNumber) => clsPersonData.IsExist(PhoneNumber);
 
-    public static bool Delete(int PersonID) => clsPersonData.DeletePerson(PersonID);
+    public  bool Delete() => clsPersonData.DeletePerson(this.PersonID);
 
 
     public  bool Save()
