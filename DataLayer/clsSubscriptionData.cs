@@ -16,17 +16,17 @@ namespace DataLayer
     /// <summary>
     /// Add new Subscription
     /// </summary>
-    /// <param name="PersonID"></param>
+    /// <param name="PlayerID"></param>
     /// <param name="MemberShipID"></param>
     /// <param name="StartDate"></param>
     /// <param name="EndDate"></param>
     /// <returns>return New Subscription ID</returns>
-    public static int AddNew(int PersonID, int MemberShipID, DateTime StartDate, DateTime EndDate)
+    public static int AddNew(int PlayerID, int MemberShipID, DateTime StartDate, DateTime EndDate)
     {
       int SubscriptionID = 0;
 
-      string Query = @"Insert Into Subscriptions(PersonID,MemberShipID,StartDate,EndDate)
-                     Values(@PersonID,@MemberShipID,@StartDate,@EndDate)
+      string Query = @"Insert Into Subscriptions(PlayerID,MemberShipID,StartDate,EndDate)
+                     Values(@PlayerID,@MemberShipID,@StartDate,@EndDate)
                      SELECT SCOPE_IDENTITY();";
 
       try
@@ -37,7 +37,7 @@ namespace DataLayer
 
           using (SqlCommand Command = new SqlCommand(Query, Connection))
           {
-            Command.Parameters.AddWithValue("@PersonID", PersonID);
+            Command.Parameters.AddWithValue("@PlayerID", PlayerID);
             Command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
             Command.Parameters.AddWithValue("@StartDate", StartDate);
             Command.Parameters.AddWithValue("@EndDate", EndDate);
@@ -68,17 +68,17 @@ namespace DataLayer
     /// Update Subscription
     /// </summary>
     /// <param name="SubscriptionID"></param>
-    /// <param name="PersonID"></param>
+    /// <param name="PlayerID"></param>
     /// <param name="MemberShipID"></param>
     /// <param name="StartDate"></param>
     /// <param name="EndDate"></param>
     /// <returns>Boolen</returns>
-    public static bool Update(int SubscriptionID, int PersonID, int MemberShipID, DateTime StartDate, DateTime EndDate)
+    public static bool Update(int SubscriptionID, int PlayerID, int MemberShipID, DateTime StartDate, DateTime EndDate)
     {
       int rowsAffected = 0;
 
       string Query = @"Update Subscriptions
-                     set PersonID=@PersonID,
+                     set PlayerID=@PlayerID,
                      MemberShipID=@MemberShipID,
                      StartDate=@StartDate,
                      EndDate=@EndDate
@@ -93,7 +93,7 @@ namespace DataLayer
           using(SqlCommand Command = new SqlCommand(Query, Connection))
           {
             Command.Parameters.AddWithValue("@SubscriptionID", SubscriptionID);
-            Command.Parameters.AddWithValue("@PersonID", PersonID);
+            Command.Parameters.AddWithValue("@PlayerID", PlayerID);
             Command.Parameters.AddWithValue("@MemberShipID", MemberShipID);
             Command.Parameters.AddWithValue("@StartDate", StartDate);
             Command.Parameters.AddWithValue("@EndDate", EndDate);
@@ -120,12 +120,12 @@ namespace DataLayer
     /// Find Subscription by SubscriptionID
     /// </summary>
     /// <param name="SubscriptionID"></param>
-    /// <param name="PersonID"></param>
+    /// <param name="PlayerID"></param>
     /// <param name="MemberShipID"></param>
     /// <param name="StartDate"></param>
     /// <param name="EndDate"></param>
     /// <returns>Boolen and fill the praperties</returns>
-    public static bool GetSubscriptionByID(int SubscriptionID, ref int PersonID, ref int MemberShipID,
+    public static bool GetSubscriptionByID(int SubscriptionID, ref int PlayerID, ref int MemberShipID,
         ref DateTime StartDate, ref DateTime EndDate)
     {
       bool IsFound = false;
@@ -148,7 +148,7 @@ namespace DataLayer
               {
                 IsFound = true;
 
-                PersonID = (int)reader["PersonID"];
+                PlayerID = (int)reader["PlayerID"];
                 MemberShipID = (int)reader["MemberShipID"];
                 StartDate = (DateTime)reader["StartDate"];
                 EndDate = (DateTime)reader["EndDate"];

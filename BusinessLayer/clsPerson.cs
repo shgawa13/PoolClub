@@ -43,7 +43,6 @@ namespace BusinessLayer
       this.LastName = LastName;
       this.PhoneNumber = PhoneNumber;
 
-
       _Mode = enMode.Update;
     }
 

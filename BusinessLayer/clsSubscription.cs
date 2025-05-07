@@ -21,11 +21,11 @@ namespace BusinessLayer
     }
 
 
-    private int _PersonID;
-    public int PersonID
+    private int _PlayerID;
+    public int PlayerID
     {
-      get { return _PersonID; }
-      set { PersonID = value; }
+      get { return _PlayerID; }
+      set { PlayerID = value; }
     }
 
     private int _MemberShipID;
@@ -52,7 +52,7 @@ namespace BusinessLayer
     public clsSubscription()
     {
       this.SubscriptionID = -1;
-      this.PersonID = -1;
+      this.PlayerID = -1;
       this.MemberShipID = -1;
       this.StartDate = DateTime.Now;
       this.EndDate = DateTime.Now;
@@ -61,10 +61,10 @@ namespace BusinessLayer
     }
 
 
-    private clsSubscription(int SubscriptionID,int PersonID,int MemberShipID,DateTime Start,DateTime End)
+    private clsSubscription(int SubscriptionID,int PlayerID,int MemberShipID,DateTime Start,DateTime End)
     {
       this.SubscriptionID = SubscriptionID;
-      this.PersonID = PersonID;
+      this.PlayerID = PlayerID;
       this.MemberShipID = MemberShipID;
       this.StartDate = Start;
       this.EndDate = End;
@@ -75,26 +75,26 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      this.SubscriptionID = clsSubscriptionData.AddNew(this.PersonID, this.MemberShipID, this.StartDate, this.EndDate);
+      this.SubscriptionID = clsSubscriptionData.AddNew(this.PlayerID, this.MemberShipID, this.StartDate, this.EndDate);
       return (this.SubscriptionID > 0);
     }
 
     private bool _Update()
     {
-     return clsSubscriptionData.Update(this.SubscriptionID,this.PersonID,this.MemberShipID,this.StartDate,this.EndDate);
+     return clsSubscriptionData.Update(this.SubscriptionID,this.PlayerID,this.MemberShipID,this.StartDate,this.EndDate);
 
     }
 
     public clsSubscription Find(int SubscriptionID)
     {
-      int PersonID =-1, MemberShipID =-1;
+      int PlayerID =-1, MemberShipID =-1;
       DateTime StartDate = DateTime.Now, EndDate = DateTime.Now;
 
-      bool IsFound = clsSubscriptionData.GetSubscriptionByID(SubscriptionID, ref PersonID, ref MemberShipID, ref StartDate,
+      bool IsFound = clsSubscriptionData.GetSubscriptionByID(SubscriptionID, ref PlayerID, ref MemberShipID, ref StartDate,
         ref EndDate);
 
       if (IsFound)
-        return new clsSubscription(SubscriptionID, PersonID, MemberShipID, StartDate, EndDate);
+        return new clsSubscription(SubscriptionID, PlayerID, MemberShipID, StartDate, EndDate);
       else
         return null;
 
