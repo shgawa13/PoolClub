@@ -19,16 +19,13 @@ namespace DataLayer
     /// </summary>
     /// <param name="FirstName"></param>
     /// <param name="LastName"></param>
-    /// <param name="PhoneNumber"></param>
-    /// <param name="IsActive"></param>
-    /// <param name="CreatedByID"></param>
     /// <returns>the New PersonID: int</returns>
-    public static int AddNewPerson(string FirstName,string LastName,string PhoneNumber, bool IsActive,int CreatedByID)
+    public static int AddNewPerson(string FirstName,string LastName,string PhoneNumber)
     {
       int PersonID = -1;
 
-      string Query = @"Insert Into People(FirstName,LastName,PhoneNumber,IsActive,CreatedByID)
-        Values(@FirstName,@LastName,@PhoneNumber,@IsActive,@CreatedByID)
+      string Query = @"Insert Into People(FirstName,LastName,PhoneNumber)
+        Values(@FirstName,@LastName,@PhoneNumber)
         Select SCOPE_IDENTITY()";
 
       try
@@ -45,8 +42,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
-            command.Parameters.AddWithValue("@IsActive", IsActive);
-            command.Parameters.AddWithValue("@CreatedByID", CreatedByID);
+
 
             // resiving object from DB
             object result = command.ExecuteScalar();
@@ -79,17 +75,15 @@ namespace DataLayer
     /// <param name="FirstName"></param>
     /// <param name="LastName"></param>
     /// <param name="PhoneNumber"></param>
-    /// <param name="IsActive"></param>
     /// <returns>Boolen</returns>
-    public static bool Update(int PersonID, string FirstName, string LastName, string PhoneNumber, bool IsActive)
+    public static bool Update(int PersonID, string FirstName, string LastName, string PhoneNumber)
     {
       int EffectedRow = 0;
 
       string Query = @"Update People
         set FirstName=@FirstName,
         LastName=@LastName,
-        PhoneNumber = @PhoneNumber,  
-        IsActive=@IsActive;
+        PhoneNumber = @PhoneNumber  
         Where PersonID=@PersonID";
 
     try {
@@ -107,7 +101,7 @@ namespace DataLayer
             command.Parameters.AddWithValue("@FirstName", FirstName);
             command.Parameters.AddWithValue("@LastName", LastName);
             command.Parameters.AddWithValue("@PhoenNumber", PhoneNumber);
-            command.Parameters.AddWithValue("@IsActive", IsActive);
+
             // rows effected  
             EffectedRow = command.ExecuteNonQuery();
 
@@ -140,11 +134,8 @@ namespace DataLayer
     /// <param name="FirstName"></param>
     /// <param name="LastName"></param>
     /// <param name="PhoneNumber"></param>
-    /// <param name="CreatedByID"></param>
-    /// <param name="IsActive"></param>
     /// <returns>Boolen also fills  Parameters</returns>
-    public static bool FindPersonByID(int PersonID, ref string FirstName,ref string LastName,  ref string PhoneNumber,
-        ref bool IsActive ,ref int CreatedByID)
+    public static bool FindPersonByID(int PersonID, ref string FirstName,ref string LastName,  ref string PhoneNumber)
     {
 
       bool IsFound = false;
@@ -176,8 +167,7 @@ namespace DataLayer
                 FirstName = (string)reader["FirstName"];
                 LastName = (string)reader["LastName"];
                 PhoneNumber = (string)reader["PhoneNumber"];
-                IsActive = (bool)reader["IsActive"];
-                CreatedByID = (int)reader["CreatedByID"];
+                
 
               }
             }
@@ -209,11 +199,8 @@ namespace DataLayer
     /// <param name="PersonID"></param>
     /// <param name="FirstName"></param>
     /// <param name="LastName"></param>
-    /// <param name="CreatedByID"></param>
-    /// <param name="IsActive"></param>
     /// <returns>Boolen also fills  Parameters</returns>
-    public static bool FindPersonByPhonNumber(string PhoneNumber,ref int PersonID, ref string FirstName, ref string LastName,
-         ref bool IsActive, ref int CreatedByID)
+    public static bool FindPersonByPhonNumber(string PhoneNumber,ref int PersonID, ref string FirstName, ref string LastName)
     {
 
       bool IsFound = false;
@@ -244,8 +231,6 @@ namespace DataLayer
                 FirstName = (string)reader["FirstName"];
                 LastName = (string)reader["LastName"];
                 PhoneNumber = (string)reader["PhoneNumber"];
-                IsActive = (bool)reader["IsActive"];
-                CreatedByID = (int)reader["CreatedByID"];
 
               }
             }

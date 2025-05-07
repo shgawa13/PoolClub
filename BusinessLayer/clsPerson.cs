@@ -23,8 +23,7 @@ namespace BusinessLayer
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string PhoneNumber { get; set; }
-    public bool IsActive { get; set; }
-    public int CreatedByID { get; set; }
+    
 
     public clsPerson()
     {
@@ -32,21 +31,18 @@ namespace BusinessLayer
       this.FirstName = string.Empty;
       this.LastName = string.Empty;
       this.PhoneNumber = string.Empty;
-      this.IsActive = false;
-      this.CreatedByID = -1;
 
       _Mode = enMode.AddNew;
     }
 
 
-    private clsPerson(int PersonID, string FirstName, string LastName, string PhoneNumber, bool IsActive, int CreatedByID)
+    private clsPerson(int PersonID, string FirstName, string LastName, string PhoneNumber)
     {
       this.PersonID = PersonID;
       this.FirstName = FirstName;
       this.LastName = LastName;
       this.PhoneNumber = PhoneNumber;
-      this.IsActive = IsActive;
-      this.CreatedByID = CreatedByID;
+
 
       _Mode = enMode.Update;
     }
@@ -54,26 +50,25 @@ namespace BusinessLayer
 
     private bool _AddNew()
     {
-      this.PersonID = clsPersonData.AddNewPerson(this.FirstName,this.LastName,this.PhoneNumber,this.IsActive,this.CreatedByID);
+      this.PersonID = clsPersonData.AddNewPerson(this.FirstName,this.LastName,this.PhoneNumber);
 
       return (this.PersonID > 0);
     }
 
     private bool _Update()
     { 
-     return clsPersonData.Update(this.PersonID,this.FirstName, this.LastName, this.PhoneNumber, this.IsActive);
+     return clsPersonData.Update(this.PersonID,this.FirstName, this.LastName, this.PhoneNumber);
     }
 
     public static clsPerson Find(int PersonID)
     {
       string FirstName = string.Empty, LastName = string.Empty, PhoneNumber = string.Empty;
-      int CreatedByID = -1;
-      bool IsActive = false;
 
-      bool IsFound = clsPersonData.FindPersonByID(PersonID, ref FirstName, ref LastName, ref PhoneNumber, ref IsActive, ref CreatedByID);
+
+      bool IsFound = clsPersonData.FindPersonByID(PersonID, ref FirstName, ref LastName, ref PhoneNumber);
 
       if (IsFound)
-        return new clsPerson(PersonID, FirstName, LastName, PhoneNumber, IsActive, CreatedByID);
+        return new clsPerson(PersonID, FirstName, LastName, PhoneNumber);
       else
         return null;
     }
@@ -84,11 +79,10 @@ namespace BusinessLayer
       int PersonID = -1, CreatedByID = -1;
       bool IsActive = false;
 
-      bool IsFound = clsPersonData.FindPersonByPhonNumber(PhoneNumber, ref PersonID, ref FirstName, ref LastName,ref IsActive,
-        ref CreatedByID);
+      bool IsFound = clsPersonData.FindPersonByPhonNumber(PhoneNumber, ref PersonID, ref FirstName, ref LastName);
 
       if (IsFound)
-        return new clsPerson(PersonID, FirstName, LastName, PhoneNumber, IsActive, CreatedByID);
+        return new clsPerson(PersonID, FirstName, LastName, PhoneNumber);
       else
         return null;
     }
