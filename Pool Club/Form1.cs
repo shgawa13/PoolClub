@@ -183,7 +183,7 @@ namespace Pool_Club
 
     private void btnPlayers_Click(object sender, EventArgs e)
     {
-      OpenChildForm(new frmPlayers());
+      OpenChildForm(new frmPlayersList());
       ActivateButton(sender, RGBColors.color2);
     }
 

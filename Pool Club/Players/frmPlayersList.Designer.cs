@@ -1,6 +1,6 @@
 ﻿namespace Pool_Club.Players
 {
-  partial class frmPlayers
+  partial class frmPlayersList
   {
     /// <summary>
     /// Required designer variable.
@@ -29,7 +29,9 @@
     private void InitializeComponent()
     {
       this.panel1 = new System.Windows.Forms.Panel();
-      this.txtbSearch = new System.Windows.Forms.TextBox();
+      this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
+      this.btnSearch = new Pool_Club.Controls.ctrlExpertBtn();
+      this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilterBy = new System.Windows.Forms.ComboBox();
       this.label1 = new System.Windows.Forms.Label();
       this.panelDown = new System.Windows.Forms.Panel();
@@ -44,8 +46,6 @@
       this.statusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-      this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
-      this.btnSearch = new Pool_Club.Controls.ctrlExpertBtn();
       this.panel1.SuspendLayout();
       this.panelDown.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).BeginInit();
@@ -57,7 +57,7 @@
       this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
       this.panel1.Controls.Add(this.btnAddPlayer);
       this.panel1.Controls.Add(this.btnSearch);
-      this.panel1.Controls.Add(this.txtbSearch);
+      this.panel1.Controls.Add(this.txtFilterValue);
       this.panel1.Controls.Add(this.cbFilterBy);
       this.panel1.Controls.Add(this.label1);
       this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -66,15 +66,54 @@
       this.panel1.Size = new System.Drawing.Size(800, 55);
       this.panel1.TabIndex = 0;
       // 
-      // txtbSearch
+      // btnAddPlayer
       // 
-      this.txtbSearch.BackColor = System.Drawing.SystemColors.ControlLight;
-      this.txtbSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtbSearch.Location = new System.Drawing.Point(269, 11);
-      this.txtbSearch.Name = "txtbSearch";
-      this.txtbSearch.Size = new System.Drawing.Size(167, 32);
-      this.txtbSearch.TabIndex = 2;
-      this.txtbSearch.TextChanged += new System.EventHandler(this.txtbSearch_TextChanged);
+      this.btnAddPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnAddPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnAddPlayer.BorderColor = System.Drawing.Color.Gainsboro;
+      this.btnAddPlayer.BorderRadius = 5;
+      this.btnAddPlayer.BorderSize = 0;
+      this.btnAddPlayer.FlatAppearance.BorderSize = 0;
+      this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddPlayer.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddPlayer.ForeColor = System.Drawing.Color.Azure;
+      this.btnAddPlayer.Location = new System.Drawing.Point(684, 5);
+      this.btnAddPlayer.Name = "btnAddPlayer";
+      this.btnAddPlayer.Size = new System.Drawing.Size(104, 44);
+      this.btnAddPlayer.TabIndex = 4;
+      this.btnAddPlayer.Text = "Add New";
+      this.btnAddPlayer.TextColor = System.Drawing.Color.Azure;
+      this.btnAddPlayer.UseVisualStyleBackColor = false;
+      // 
+      // btnSearch
+      // 
+      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSearch.BorderRadius = 5;
+      this.btnSearch.BorderSize = 0;
+      this.btnSearch.FlatAppearance.BorderSize = 0;
+      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSearch.ForeColor = System.Drawing.Color.Azure;
+      this.btnSearch.Location = new System.Drawing.Point(446, 10);
+      this.btnSearch.Name = "btnSearch";
+      this.btnSearch.Size = new System.Drawing.Size(94, 34);
+      this.btnSearch.TabIndex = 3;
+      this.btnSearch.Text = "Search";
+      this.btnSearch.TextColor = System.Drawing.Color.Azure;
+      this.btnSearch.UseVisualStyleBackColor = false;
+      // 
+      // txtFilterValue
+      // 
+      this.txtFilterValue.BackColor = System.Drawing.SystemColors.ControlLight;
+      this.txtFilterValue.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtFilterValue.Location = new System.Drawing.Point(269, 11);
+      this.txtFilterValue.Name = "txtFilterValue";
+      this.txtFilterValue.Size = new System.Drawing.Size(167, 32);
+      this.txtFilterValue.TabIndex = 2;
+      this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
       // 
       // cbFilterBy
       // 
@@ -205,45 +244,6 @@
       this.deleteToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
       this.deleteToolStripMenuItem.Text = "Delete";
       // 
-      // btnAddPlayer
-      // 
-      this.btnAddPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.btnAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BorderColor = System.Drawing.Color.Gainsboro;
-      this.btnAddPlayer.BorderRadius = 5;
-      this.btnAddPlayer.BorderSize = 0;
-      this.btnAddPlayer.FlatAppearance.BorderSize = 0;
-      this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddPlayer.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddPlayer.ForeColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.Location = new System.Drawing.Point(684, 5);
-      this.btnAddPlayer.Name = "btnAddPlayer";
-      this.btnAddPlayer.Size = new System.Drawing.Size(104, 44);
-      this.btnAddPlayer.TabIndex = 4;
-      this.btnAddPlayer.Text = "Add New";
-      this.btnAddPlayer.TextColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.UseVisualStyleBackColor = false;
-      // 
-      // btnSearch
-      // 
-      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSearch.BorderRadius = 5;
-      this.btnSearch.BorderSize = 0;
-      this.btnSearch.FlatAppearance.BorderSize = 0;
-      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSearch.ForeColor = System.Drawing.Color.Azure;
-      this.btnSearch.Location = new System.Drawing.Point(446, 10);
-      this.btnSearch.Name = "btnSearch";
-      this.btnSearch.Size = new System.Drawing.Size(94, 34);
-      this.btnSearch.TabIndex = 3;
-      this.btnSearch.Text = "Search";
-      this.btnSearch.TextColor = System.Drawing.Color.Azure;
-      this.btnSearch.UseVisualStyleBackColor = false;
-      // 
       // frmPlayers
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,7 +271,7 @@
     private System.Windows.Forms.Label label1;
     private System.Windows.Forms.Panel panelDown;
     private System.Windows.Forms.Label label2;
-    private System.Windows.Forms.TextBox txtbSearch;
+    private System.Windows.Forms.TextBox txtFilterValue;
     private System.Windows.Forms.ComboBox cbFilterBy;
     private System.Windows.Forms.Label lblPlayersNumber;
     private Controls.ctrlExpertBtn btnSearch;
