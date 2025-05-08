@@ -11,7 +11,7 @@ using BusinessLayer;
 
 namespace Pool_Club.Players
 {
-  public partial class frmPlayers : Form
+  public partial class frmPlayersList : Form
   {
     private clsPlayer _Player;
 
@@ -19,25 +19,38 @@ namespace Pool_Club.Players
     private static DataTable _dtAllPlayers = clsPlayer.GetAllPeople() ?? new DataTable();
     private DataTable _dtPlayers = _dtAllPlayers.Clone();
 
-    public frmPlayers()
+    public frmPlayersList()
     {
       InitializeComponent();
-      _Reset();
     }
 
-    private void _Reset()
+    private void frmPlayersList_Load(object sender, EventArgs e)
     {
+      _ResetPlayersList();
+    
+
+
+    }
+
+
+    private void _ResetPlayersList()
+    {
+      _dtPlayers = clsPlayer.GetAllPlayers() ?? new DataTable();
+
+      // we check if the table is empty or not
       cbFilterBy.SelectedIndex = 0;
-      btnSearch.Visible = false;
-      txtFilterValue.Visible = false;
+
+      // Hide or Show Controls
+      txtFilterValue.Visible = _HandleEmptyTable();
+      btnSearch.Visible = txtFilterValue.Visible;
+      lblPlayersDataTable.Visible = !txtFilterValue.Visible;
+
+
+      dgvPlayers.DataSource = _dtPlayers;
+      lblPlayersNumber.Text = dgvPlayers.RowCount.ToString();
     }
 
-    private void _RefreshPlayersList()
-    {
-      _dtPlayers = clsPlayer.GetAllPeople() ?? new DataTable();
-      
-     // cbFilterBy.Enabled =
-    }
+   
 
     private bool _HandleEmptyTable()
     {
@@ -50,7 +63,8 @@ namespace Pool_Club.Players
       else
       {
         _dtPlayers.Clear();
-        _Reset();
+        ctmsPlayers.Enabled = false;
+        
       }
         return false;
     }
@@ -59,8 +73,14 @@ namespace Pool_Club.Players
 
     private void cbFilterBy_SelectedIndexChanged(object sender, EventArgs e)
     {
-        btnSearch.Visible = (cbFilterBy.SelectedIndex != 0);
-        txtFilterValue.Visible = (cbFilterBy.SelectedIndex != 0);
+      btnSearch.Visible = (cbFilterBy.SelectedIndex != 0);
+      txtFilterValue.Visible = (cbFilterBy.SelectedIndex != 0);
+
+      if (txtFilterValue.Visible)
+      {
+        txtFilterValue.Text = string.Empty;
+        txtFilterValue.Focus();
+      }
 
     }
 
@@ -68,5 +88,6 @@ namespace Pool_Club.Players
     {
 
     }
+
   }
 }

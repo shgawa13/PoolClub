@@ -91,11 +91,17 @@
     <Compile Include="Games\frmNewGame.Designer.cs">
       <DependentUpon>frmNewGame.cs</DependentUpon>
     </Compile>
-    <Compile Include="Players\frmPlayers.cs">
+    <Compile Include="Players\frmAddUpdatePlayer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Players\frmPlayers.Designer.cs">
-      <DependentUpon>frmPlayers.cs</DependentUpon>
+    <Compile Include="Players\frmAddUpdatePlayer.Designer.cs">
+      <DependentUpon>frmAddUpdatePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Players\frmPlayersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Players\frmPlayersList.Designer.cs">
+      <DependentUpon>frmPlayersList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -132,8 +138,11 @@
     <EmbeddedResource Include="Games\frmNewGame.resx">
       <DependentUpon>frmNewGame.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Players\frmPlayers.resx">
-      <DependentUpon>frmPlayers.cs</DependentUpon>
+    <EmbeddedResource Include="Players\frmAddUpdatePlayer.resx">
+      <DependentUpon>frmAddUpdatePlayer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Players\frmPlayersList.resx">
+      <DependentUpon>frmPlayersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -176,6 +185,15 @@
       <Project>{f0cb68f8-b587-4b0b-aaa6-64cdc097d885}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vision Test 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
