@@ -89,5 +89,10 @@ namespace Pool_Club.Players
 
     }
 
+    private void btnAddPlayer_Click(object sender, EventArgs e)
+    {
+      frmAddUpdatePlayer frm = new frmAddUpdatePlayer();
+      frm.ShowDialog();
+    }
   }
 }

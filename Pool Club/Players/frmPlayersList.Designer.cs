@@ -29,6 +29,8 @@
     private void InitializeComponent()
     {
       this.panel1 = new System.Windows.Forms.Panel();
+      this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
+      this.btnSearch = new Pool_Club.Controls.ctrlExpertBtn();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilterBy = new System.Windows.Forms.ComboBox();
       this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +39,7 @@
       this.label2 = new System.Windows.Forms.Label();
       this.dgvPlayers = new System.Windows.Forms.DataGridView();
       this.ctmsPlayers = new Syncfusion.Windows.Forms.Tools.ContextMenuStripEx();
+      this.showInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
       this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,9 +47,6 @@
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.lblPlayersDataTable = new System.Windows.Forms.Label();
-      this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
-      this.btnSearch = new Pool_Club.Controls.ctrlExpertBtn();
-      this.showInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.panel1.SuspendLayout();
       this.panelDown.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).BeginInit();
@@ -66,6 +66,46 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(800, 55);
       this.panel1.TabIndex = 0;
+      // 
+      // btnAddPlayer
+      // 
+      this.btnAddPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.btnAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnAddPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnAddPlayer.BorderColor = System.Drawing.Color.Gainsboro;
+      this.btnAddPlayer.BorderRadius = 5;
+      this.btnAddPlayer.BorderSize = 0;
+      this.btnAddPlayer.FlatAppearance.BorderSize = 0;
+      this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddPlayer.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddPlayer.ForeColor = System.Drawing.Color.Azure;
+      this.btnAddPlayer.Location = new System.Drawing.Point(684, 5);
+      this.btnAddPlayer.Name = "btnAddPlayer";
+      this.btnAddPlayer.Size = new System.Drawing.Size(104, 44);
+      this.btnAddPlayer.TabIndex = 4;
+      this.btnAddPlayer.Text = "Add New";
+      this.btnAddPlayer.TextColor = System.Drawing.Color.Azure;
+      this.btnAddPlayer.UseVisualStyleBackColor = false;
+      this.btnAddPlayer.Click += new System.EventHandler(this.btnAddPlayer_Click);
+      // 
+      // btnSearch
+      // 
+      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
+      this.btnSearch.BorderRadius = 5;
+      this.btnSearch.BorderSize = 0;
+      this.btnSearch.FlatAppearance.BorderSize = 0;
+      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSearch.ForeColor = System.Drawing.Color.Azure;
+      this.btnSearch.Location = new System.Drawing.Point(446, 10);
+      this.btnSearch.Name = "btnSearch";
+      this.btnSearch.Size = new System.Drawing.Size(94, 34);
+      this.btnSearch.TabIndex = 3;
+      this.btnSearch.Text = "Search";
+      this.btnSearch.TextColor = System.Drawing.Color.Azure;
+      this.btnSearch.UseVisualStyleBackColor = false;
       // 
       // txtFilterValue
       // 
@@ -166,6 +206,13 @@
       this.ctmsPlayers.Name = "ctxPlayers";
       this.ctmsPlayers.Size = new System.Drawing.Size(177, 146);
       // 
+      // showInfoToolStripMenuItem
+      // 
+      this.showInfoToolStripMenuItem.Image = global::Pool_Club.Properties.Resources.Vision_Test_32;
+      this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
+      this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
+      this.showInfoToolStripMenuItem.Text = "Show Info";
+      // 
       // updateToolStripMenuItem
       // 
       this.updateToolStripMenuItem.Image = global::Pool_Club.Properties.Resources.edit_32;
@@ -214,52 +261,6 @@
       this.lblPlayersDataTable.Size = new System.Drawing.Size(247, 30);
       this.lblPlayersDataTable.TabIndex = 2;
       this.lblPlayersDataTable.Text = "There are no players yet";
-      // 
-      // btnAddPlayer
-      // 
-      this.btnAddPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.btnAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BorderColor = System.Drawing.Color.Gainsboro;
-      this.btnAddPlayer.BorderRadius = 5;
-      this.btnAddPlayer.BorderSize = 0;
-      this.btnAddPlayer.FlatAppearance.BorderSize = 0;
-      this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddPlayer.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddPlayer.ForeColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.Location = new System.Drawing.Point(684, 5);
-      this.btnAddPlayer.Name = "btnAddPlayer";
-      this.btnAddPlayer.Size = new System.Drawing.Size(104, 44);
-      this.btnAddPlayer.TabIndex = 4;
-      this.btnAddPlayer.Text = "Add New";
-      this.btnAddPlayer.TextColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.UseVisualStyleBackColor = false;
-      // 
-      // btnSearch
-      // 
-      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSearch.BorderRadius = 5;
-      this.btnSearch.BorderSize = 0;
-      this.btnSearch.FlatAppearance.BorderSize = 0;
-      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSearch.ForeColor = System.Drawing.Color.Azure;
-      this.btnSearch.Location = new System.Drawing.Point(446, 10);
-      this.btnSearch.Name = "btnSearch";
-      this.btnSearch.Size = new System.Drawing.Size(94, 34);
-      this.btnSearch.TabIndex = 3;
-      this.btnSearch.Text = "Search";
-      this.btnSearch.TextColor = System.Drawing.Color.Azure;
-      this.btnSearch.UseVisualStyleBackColor = false;
-      // 
-      // showInfoToolStripMenuItem
-      // 
-      this.showInfoToolStripMenuItem.Image = global::Pool_Club.Properties.Resources.Vision_Test_32;
-      this.showInfoToolStripMenuItem.Name = "showInfoToolStripMenuItem";
-      this.showInfoToolStripMenuItem.Size = new System.Drawing.Size(176, 26);
-      this.showInfoToolStripMenuItem.Text = "Show Info";
       // 
       // frmPlayersList
       // 
