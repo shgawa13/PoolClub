@@ -29,14 +29,11 @@
     private void InitializeComponent()
     {
       this.lblTitle = new System.Windows.Forms.Label();
-      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.panelDown = new System.Windows.Forms.Panel();
       this.cmbMemberShips = new System.Windows.Forms.ComboBox();
       this.lblPlayersNumber = new System.Windows.Forms.Label();
       this.label2 = new System.Windows.Forms.Label();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.iconButton3 = new FontAwesome.Sharp.IconButton();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.btnCancel = new Pool_Club.Controls.ctrlExpertBtn();
       this.label4 = new System.Windows.Forms.Label();
       this.txbLastName = new System.Windows.Forms.TextBox();
@@ -46,10 +43,16 @@
       this.label1 = new System.Windows.Forms.Label();
       this.txbFirstName = new System.Windows.Forms.TextBox();
       this.label6 = new System.Windows.Forms.Label();
+      this.label3 = new System.Windows.Forms.Label();
+      this.comboBox1 = new System.Windows.Forms.ComboBox();
+      this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+      this.iconButton3 = new FontAwesome.Sharp.IconButton();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
+      this.pictureBox1 = new System.Windows.Forms.PictureBox();
       this.panelDown.SuspendLayout();
       this.groupBox1.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
       this.SuspendLayout();
       // 
       // lblTitle
@@ -62,16 +65,6 @@
       this.lblTitle.Size = new System.Drawing.Size(94, 25);
       this.lblTitle.TabIndex = 0;
       this.lblTitle.Text = "Add New";
-      // 
-      // pictureBox1
-      // 
-      this.pictureBox1.Image = global::Pool_Club.Properties.Resources.Players;
-      this.pictureBox1.Location = new System.Drawing.Point(112, 14);
-      this.pictureBox1.Name = "pictureBox1";
-      this.pictureBox1.Size = new System.Drawing.Size(143, 96);
-      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-      this.pictureBox1.TabIndex = 1;
-      this.pictureBox1.TabStop = false;
       // 
       // panelDown
       // 
@@ -119,11 +112,14 @@
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.iconButton2);
       this.groupBox1.Controls.Add(this.iconButton5);
       this.groupBox1.Controls.Add(this.iconButton3);
       this.groupBox1.Controls.Add(this.iconButton1);
+      this.groupBox1.Controls.Add(this.comboBox1);
       this.groupBox1.Controls.Add(this.cmbMemberShips);
       this.groupBox1.Controls.Add(this.btnCancel);
+      this.groupBox1.Controls.Add(this.label3);
       this.groupBox1.Controls.Add(this.label4);
       this.groupBox1.Controls.Add(this.txbLastName);
       this.groupBox1.Controls.Add(this.btnSave);
@@ -143,36 +139,6 @@
       this.groupBox1.TabIndex = 2;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Player info";
-      // 
-      // iconButton3
-      // 
-      this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.iconButton3.FlatAppearance.BorderSize = 0;
-      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
-      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton3.IconSize = 35;
-      this.iconButton3.Location = new System.Drawing.Point(14, 69);
-      this.iconButton3.Name = "iconButton3";
-      this.iconButton3.Size = new System.Drawing.Size(35, 27);
-      this.iconButton3.TabIndex = 10;
-      this.iconButton3.UseVisualStyleBackColor = true;
-      // 
-      // iconButton1
-      // 
-      this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Orcid;
-      this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 35;
-      this.iconButton1.Location = new System.Drawing.Point(14, 27);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Size = new System.Drawing.Size(35, 27);
-      this.iconButton1.TabIndex = 8;
-      this.iconButton1.UseVisualStyleBackColor = true;
       // 
       // btnCancel
       // 
@@ -225,7 +191,7 @@
       this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.btnSave.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnSave.ForeColor = System.Drawing.Color.White;
-      this.btnSave.Location = new System.Drawing.Point(101, 304);
+      this.btnSave.Location = new System.Drawing.Point(98, 304);
       this.btnSave.Name = "btnSave";
       this.btnSave.Size = new System.Drawing.Size(120, 42);
       this.btnSave.TabIndex = 6;
@@ -284,6 +250,42 @@
       this.label6.TabIndex = 4;
       this.label6.Text = "Phone :";
       // 
+      // label3
+      // 
+      this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.label3.AutoSize = true;
+      this.label3.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.label3.ForeColor = System.Drawing.Color.Black;
+      this.label3.Location = new System.Drawing.Point(89, 203);
+      this.label3.Name = "label3";
+      this.label3.Size = new System.Drawing.Size(189, 25);
+      this.label3.TabIndex = 6;
+      this.label3.Text = "Member Ship Type :";
+      // 
+      // comboBox1
+      // 
+      this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.comboBox1.FormattingEnabled = true;
+      this.comboBox1.Location = new System.Drawing.Point(77, 233);
+      this.comboBox1.Name = "comboBox1";
+      this.comboBox1.Size = new System.Drawing.Size(219, 28);
+      this.comboBox1.TabIndex = 4;
+      // 
+      // iconButton2
+      // 
+      this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton2.FlatAppearance.BorderSize = 0;
+      this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.GetPocket;
+      this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton2.IconSize = 35;
+      this.iconButton2.Location = new System.Drawing.Point(14, 234);
+      this.iconButton2.Name = "iconButton2";
+      this.iconButton2.Size = new System.Drawing.Size(35, 27);
+      this.iconButton2.TabIndex = 12;
+      this.iconButton2.UseVisualStyleBackColor = true;
+      // 
       // iconButton5
       // 
       this.iconButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -299,6 +301,46 @@
       this.iconButton5.TabIndex = 12;
       this.iconButton5.UseVisualStyleBackColor = true;
       // 
+      // iconButton3
+      // 
+      this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton3.FlatAppearance.BorderSize = 0;
+      this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
+      this.iconButton3.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton3.IconSize = 35;
+      this.iconButton3.Location = new System.Drawing.Point(14, 69);
+      this.iconButton3.Name = "iconButton3";
+      this.iconButton3.Size = new System.Drawing.Size(35, 27);
+      this.iconButton3.TabIndex = 10;
+      this.iconButton3.UseVisualStyleBackColor = true;
+      // 
+      // iconButton1
+      // 
+      this.iconButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton1.FlatAppearance.BorderSize = 0;
+      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Orcid;
+      this.iconButton1.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton1.IconSize = 35;
+      this.iconButton1.Location = new System.Drawing.Point(14, 27);
+      this.iconButton1.Name = "iconButton1";
+      this.iconButton1.Size = new System.Drawing.Size(35, 27);
+      this.iconButton1.TabIndex = 8;
+      this.iconButton1.UseVisualStyleBackColor = true;
+      // 
+      // pictureBox1
+      // 
+      this.pictureBox1.Image = global::Pool_Club.Properties.Resources.Players;
+      this.pictureBox1.Location = new System.Drawing.Point(112, 14);
+      this.pictureBox1.Name = "pictureBox1";
+      this.pictureBox1.Size = new System.Drawing.Size(143, 96);
+      this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+      this.pictureBox1.TabIndex = 1;
+      this.pictureBox1.TabStop = false;
+      // 
       // frmAddUpdatePlayer
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,11 +355,11 @@
       this.Name = "frmAddUpdatePlayer";
       this.Text = "Add New Player";
       this.Load += new System.EventHandler(this.frmAddUpdatePlayer_Load);
-      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.panelDown.ResumeLayout(false);
       this.panelDown.PerformLayout();
       this.groupBox1.ResumeLayout(false);
       this.groupBox1.PerformLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
       this.ResumeLayout(false);
 
     }
@@ -343,5 +385,8 @@
     private FontAwesome.Sharp.IconButton iconButton1;
     private FontAwesome.Sharp.IconButton iconButton3;
     private FontAwesome.Sharp.IconButton iconButton5;
+    private FontAwesome.Sharp.IconButton iconButton2;
+    private System.Windows.Forms.ComboBox comboBox1;
+    private System.Windows.Forms.Label label3;
   }
 }

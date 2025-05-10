@@ -29,6 +29,7 @@
     private void InitializeComponent()
     {
       this.pnlMenu = new System.Windows.Forms.Panel();
+      this.btnBills = new FontAwesome.Sharp.IconButton();
       this.btnChallenges = new FontAwesome.Sharp.IconButton();
       this.btnSettings = new FontAwesome.Sharp.IconButton();
       this.btnVIP = new FontAwesome.Sharp.IconButton();
@@ -47,7 +48,6 @@
       this.panel2 = new System.Windows.Forms.Panel();
       this.panel3 = new System.Windows.Forms.Panel();
       this.panelDesktop = new System.Windows.Forms.Panel();
-      this.btnBills = new FontAwesome.Sharp.IconButton();
       this.pnlMenu.SuspendLayout();
       this.panelTitleBar.SuspendLayout();
       this.SuspendLayout();
@@ -71,6 +71,31 @@
       this.pnlMenu.Name = "pnlMenu";
       this.pnlMenu.Size = new System.Drawing.Size(200, 584);
       this.pnlMenu.TabIndex = 0;
+      // 
+      // btnBills
+      // 
+      this.btnBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
+      this.btnBills.Dock = System.Windows.Forms.DockStyle.Top;
+      this.btnBills.FlatAppearance.BorderSize = 0;
+      this.btnBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnBills.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnBills.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnBills.IconChar = FontAwesome.Sharp.IconChar.MoneyBills;
+      this.btnBills.IconColor = System.Drawing.Color.WhiteSmoke;
+      this.btnBills.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.btnBills.IconSize = 40;
+      this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnBills.Location = new System.Drawing.Point(0, 390);
+      this.btnBills.Name = "btnBills";
+      this.btnBills.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+      this.btnBills.Size = new System.Drawing.Size(200, 50);
+      this.btnBills.TabIndex = 9;
+      this.btnBills.Tag = "Payments";
+      this.btnBills.Text = "Payments";
+      this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.btnBills.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+      this.btnBills.UseVisualStyleBackColor = false;
+      this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
       // 
       // btnChallenges
       // 
@@ -367,31 +392,6 @@
       this.panelDesktop.Name = "panelDesktop";
       this.panelDesktop.Size = new System.Drawing.Size(775, 501);
       this.panelDesktop.TabIndex = 4;
-      // 
-      // btnBills
-      // 
-      this.btnBills.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
-      this.btnBills.Dock = System.Windows.Forms.DockStyle.Top;
-      this.btnBills.FlatAppearance.BorderSize = 0;
-      this.btnBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnBills.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnBills.ForeColor = System.Drawing.Color.WhiteSmoke;
-      this.btnBills.IconChar = FontAwesome.Sharp.IconChar.MoneyBills;
-      this.btnBills.IconColor = System.Drawing.Color.WhiteSmoke;
-      this.btnBills.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.btnBills.IconSize = 40;
-      this.btnBills.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnBills.Location = new System.Drawing.Point(0, 390);
-      this.btnBills.Name = "btnBills";
-      this.btnBills.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-      this.btnBills.Size = new System.Drawing.Size(200, 50);
-      this.btnBills.TabIndex = 9;
-      this.btnBills.Tag = "Bills";
-      this.btnBills.Text = "Bills";
-      this.btnBills.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      this.btnBills.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-      this.btnBills.UseVisualStyleBackColor = false;
-      this.btnBills.Click += new System.EventHandler(this.btnBills_Click);
       // 
       // Form1
       // 
