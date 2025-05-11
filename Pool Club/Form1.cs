@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
-using Pool_Club.Games;
 using Pool_Club.Players;
 using Pool_Club.Settings;
 using Pool_Club.Tables;
@@ -175,11 +174,7 @@ namespace Pool_Club
       ShowAndHideAllText();
     }
 
-    private void btnNewGame_Click(object sender, EventArgs e)
-    {
-      OpenChildForm(new frmNewGame());
-      ActivateButton(sender, RGBColors.color1);
-    }
+    // games here
 
     private void btnPlayers_Click(object sender, EventArgs e)
     {

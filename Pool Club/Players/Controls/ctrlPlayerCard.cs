@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Pool_Club
 {
-  public partial class ctrlCardInfo : UserControl
+  public partial class ctrlPlayerCard : UserControl
   {
-    public ctrlCardInfo()
+    public ctrlPlayerCard()
     {
       InitializeComponent();
     }
@@ -22,6 +22,11 @@ namespace Pool_Club
       base.OnPaint(pe);
     }
 
-    
+    private void ctrlPlayerCard_Load(object sender, EventArgs e)
+    {
+
+    }
+
+
   }
 }

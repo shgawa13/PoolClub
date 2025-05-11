@@ -252,7 +252,6 @@
       this.btnNewGame.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       this.btnNewGame.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
       this.btnNewGame.UseVisualStyleBackColor = false;
-      this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
       // 
       // btnNavMenu
       // 

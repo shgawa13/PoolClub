@@ -61,11 +61,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\ctrlCardInfo.cs">
+    <Compile Include="Players\Controls\ctrlPlayerCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\ctrlCardInfo.Designer.cs">
-      <DependentUpon>ctrlCardInfo.cs</DependentUpon>
+    <Compile Include="Players\Controls\ctrlPlayerCard.Designer.cs">
+      <DependentUpon>ctrlPlayerCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\ctrlExpertBtn.cs">
       <SubType>Component</SubType>
@@ -85,11 +85,17 @@
     <Compile Include="Controls\ctrlPoolTable.Designer.cs">
       <DependentUpon>ctrlPoolTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Games\frmNewGame.cs">
+    <Compile Include="Payments\frmPayment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Games\frmNewGame.Designer.cs">
-      <DependentUpon>frmNewGame.cs</DependentUpon>
+    <Compile Include="Payments\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payments\frmPaymentList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payments\frmPaymentList.Designer.cs">
+      <DependentUpon>frmPaymentList.cs</DependentUpon>
     </Compile>
     <Compile Include="Players\frmAddUpdatePlayer.cs">
       <SubType>Form</SubType>
@@ -123,8 +129,8 @@
     <Compile Include="Vip\frmVip.Designer.cs">
       <DependentUpon>frmVip.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Controls\ctrlCardInfo.resx">
-      <DependentUpon>ctrlCardInfo.cs</DependentUpon>
+    <EmbeddedResource Include="Players\Controls\ctrlPlayerCard.resx">
+      <DependentUpon>ctrlPlayerCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ctrlExpertBtn.resx">
       <DependentUpon>ctrlExpertBtn.cs</DependentUpon>
@@ -135,8 +141,11 @@
     <EmbeddedResource Include="Controls\ctrlPoolTable.resx">
       <DependentUpon>ctrlPoolTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Games\frmNewGame.resx">
-      <DependentUpon>frmNewGame.cs</DependentUpon>
+    <EmbeddedResource Include="Payments\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payments\frmPaymentList.resx">
+      <DependentUpon>frmPaymentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Players\frmAddUpdatePlayer.resx">
       <DependentUpon>frmAddUpdatePlayer.cs</DependentUpon>
@@ -197,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Players.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
