@@ -75,7 +75,7 @@ namespace BusinessLayer
     private bool _Update() => clsMemberShipData.Update(this.MemberShipID,this.Type,this.Description,this.Price);
 
 
-    public clsMemberShip Find(int MemberShipID)
+    public static clsMemberShip Find(int MemberShipID)
     {
       short Type = 0;
       string Description = string.Empty;

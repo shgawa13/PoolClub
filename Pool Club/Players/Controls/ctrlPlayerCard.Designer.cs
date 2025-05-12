@@ -29,31 +29,31 @@
     private void InitializeComponent()
     {
       this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-      this.lblSubscriptionID = new System.Windows.Forms.Label();
-      this.lblSubscriptionType = new System.Windows.Forms.Label();
+      this.lblPlayerID = new System.Windows.Forms.Label();
       this.iconButton1 = new FontAwesome.Sharp.IconButton();
-      this.lblStartDate = new System.Windows.Forms.Label();
+      this.lblFullName = new System.Windows.Forms.Label();
+      this.lblPhone = new System.Windows.Forms.Label();
       this.iconButton5 = new FontAwesome.Sharp.IconButton();
+      this.lblHasSubscription = new System.Windows.Forms.Label();
       this.label3 = new System.Windows.Forms.Label();
       this.iconButton4 = new FontAwesome.Sharp.IconButton();
-      this.lblExpireDate = new System.Windows.Forms.Label();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
       this.label1 = new System.Windows.Forms.Label();
       this.label18 = new System.Windows.Forms.Label();
       this.label20 = new System.Windows.Forms.Label();
-      this.groupBox1 = new System.Windows.Forms.GroupBox();
-      this.label5 = new System.Windows.Forms.Label();
-      this.label6 = new System.Windows.Forms.Label();
-      this.label7 = new System.Windows.Forms.Label();
-      this.label8 = new System.Windows.Forms.Label();
-      this.iconButton2 = new FontAwesome.Sharp.IconButton();
-      this.iconButton6 = new FontAwesome.Sharp.IconButton();
-      this.iconButton7 = new FontAwesome.Sharp.IconButton();
       this.iconButton8 = new FontAwesome.Sharp.IconButton();
-      this.lblPlayerID = new System.Windows.Forms.Label();
-      this.lblFullName = new System.Windows.Forms.Label();
-      this.lblPhone = new System.Windows.Forms.Label();
-      this.lblHasSubscription = new System.Windows.Forms.Label();
+      this.iconButton7 = new FontAwesome.Sharp.IconButton();
+      this.iconButton6 = new FontAwesome.Sharp.IconButton();
+      this.iconButton2 = new FontAwesome.Sharp.IconButton();
+      this.lblSubscriptionID = new System.Windows.Forms.Label();
+      this.lblSubscriptionType = new System.Windows.Forms.Label();
+      this.label8 = new System.Windows.Forms.Label();
+      this.label7 = new System.Windows.Forms.Label();
+      this.lblStartDate = new System.Windows.Forms.Label();
+      this.label6 = new System.Windows.Forms.Label();
+      this.label5 = new System.Windows.Forms.Label();
+      this.lblExpireDate = new System.Windows.Forms.Label();
+      this.groupBox1 = new System.Windows.Forms.GroupBox();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -99,30 +99,19 @@
       this.splitContainer1.Panel2.Controls.Add(this.label5);
       this.splitContainer1.Panel2.Controls.Add(this.lblExpireDate);
       this.splitContainer1.Size = new System.Drawing.Size(942, 215);
-      this.splitContainer1.SplitterDistance = 440;
+      this.splitContainer1.SplitterDistance = 439;
       this.splitContainer1.TabIndex = 29;
       // 
-      // lblSubscriptionID
+      // lblPlayerID
       // 
-      this.lblSubscriptionID.AutoSize = true;
-      this.lblSubscriptionID.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblSubscriptionID.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblSubscriptionID.Location = new System.Drawing.Point(236, 11);
-      this.lblSubscriptionID.Name = "lblSubscriptionID";
-      this.lblSubscriptionID.Size = new System.Drawing.Size(36, 25);
-      this.lblSubscriptionID.TabIndex = 1;
-      this.lblSubscriptionID.Text = "???";
-      // 
-      // lblSubscriptionType
-      // 
-      this.lblSubscriptionType.AutoSize = true;
-      this.lblSubscriptionType.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblSubscriptionType.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblSubscriptionType.Location = new System.Drawing.Point(236, 61);
-      this.lblSubscriptionType.Name = "lblSubscriptionType";
-      this.lblSubscriptionType.Size = new System.Drawing.Size(36, 25);
-      this.lblSubscriptionType.TabIndex = 18;
-      this.lblSubscriptionType.Text = "???";
+      this.lblPlayerID.AutoSize = true;
+      this.lblPlayerID.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblPlayerID.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblPlayerID.Location = new System.Drawing.Point(228, 11);
+      this.lblPlayerID.Name = "lblPlayerID";
+      this.lblPlayerID.Size = new System.Drawing.Size(36, 25);
+      this.lblPlayerID.TabIndex = 35;
+      this.lblPlayerID.Text = "???";
       // 
       // iconButton1
       // 
@@ -139,16 +128,27 @@
       this.iconButton1.TabIndex = 27;
       this.iconButton1.UseVisualStyleBackColor = true;
       // 
-      // lblStartDate
+      // lblFullName
       // 
-      this.lblStartDate.AutoSize = true;
-      this.lblStartDate.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblStartDate.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblStartDate.Location = new System.Drawing.Point(236, 110);
-      this.lblStartDate.Name = "lblStartDate";
-      this.lblStartDate.Size = new System.Drawing.Size(36, 25);
-      this.lblStartDate.TabIndex = 21;
-      this.lblStartDate.Text = "???";
+      this.lblFullName.AutoSize = true;
+      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblFullName.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblFullName.Location = new System.Drawing.Point(228, 61);
+      this.lblFullName.Name = "lblFullName";
+      this.lblFullName.Size = new System.Drawing.Size(36, 25);
+      this.lblFullName.TabIndex = 36;
+      this.lblFullName.Text = "???";
+      // 
+      // lblPhone
+      // 
+      this.lblPhone.AutoSize = true;
+      this.lblPhone.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblPhone.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblPhone.Location = new System.Drawing.Point(228, 110);
+      this.lblPhone.Name = "lblPhone";
+      this.lblPhone.Size = new System.Drawing.Size(36, 25);
+      this.lblPhone.TabIndex = 37;
+      this.lblPhone.Text = "???";
       // 
       // iconButton5
       // 
@@ -164,6 +164,17 @@
       this.iconButton5.Size = new System.Drawing.Size(35, 27);
       this.iconButton5.TabIndex = 24;
       this.iconButton5.UseVisualStyleBackColor = true;
+      // 
+      // lblHasSubscription
+      // 
+      this.lblHasSubscription.AutoSize = true;
+      this.lblHasSubscription.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblHasSubscription.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblHasSubscription.Location = new System.Drawing.Point(228, 158);
+      this.lblHasSubscription.Name = "lblHasSubscription";
+      this.lblHasSubscription.Size = new System.Drawing.Size(36, 25);
+      this.lblHasSubscription.TabIndex = 38;
+      this.lblHasSubscription.Text = "???";
       // 
       // label3
       // 
@@ -191,17 +202,6 @@
       this.iconButton4.TabIndex = 23;
       this.iconButton4.UseVisualStyleBackColor = true;
       // 
-      // lblExpireDate
-      // 
-      this.lblExpireDate.AutoSize = true;
-      this.lblExpireDate.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblExpireDate.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblExpireDate.Location = new System.Drawing.Point(236, 158);
-      this.lblExpireDate.Name = "lblExpireDate";
-      this.lblExpireDate.Size = new System.Drawing.Size(36, 25);
-      this.lblExpireDate.TabIndex = 26;
-      this.lblExpireDate.Text = "???";
-      // 
       // iconButton3
       // 
       this.iconButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -224,9 +224,9 @@
       this.label1.ForeColor = System.Drawing.SystemColors.WindowText;
       this.label1.Location = new System.Drawing.Point(125, 11);
       this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(97, 25);
+      this.label1.Size = new System.Drawing.Size(102, 25);
       this.label1.TabIndex = 0;
-      this.label1.Text = "PlayerID :";
+      this.label1.Text = "Player ID :";
       // 
       // label18
       // 
@@ -248,110 +248,7 @@
       this.label20.Name = "label20";
       this.label20.Size = new System.Drawing.Size(158, 25);
       this.label20.TabIndex = 20;
-      this.label20.Text = "Phoen Number :";
-      // 
-      // groupBox1
-      // 
-      this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
-      this.groupBox1.Controls.Add(this.splitContainer1);
-      this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.groupBox1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.groupBox1.Location = new System.Drawing.Point(0, 0);
-      this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(954, 253);
-      this.groupBox1.TabIndex = 30;
-      this.groupBox1.TabStop = false;
-      this.groupBox1.Text = "Info";
-      // 
-      // label5
-      // 
-      this.label5.AutoSize = true;
-      this.label5.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.label5.Location = new System.Drawing.Point(123, 110);
-      this.label5.Name = "label5";
-      this.label5.Size = new System.Drawing.Size(111, 25);
-      this.label5.TabIndex = 28;
-      this.label5.Text = "Start Date :";
-      // 
-      // label6
-      // 
-      this.label6.AutoSize = true;
-      this.label6.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.label6.Location = new System.Drawing.Point(110, 158);
-      this.label6.Name = "label6";
-      this.label6.Size = new System.Drawing.Size(124, 25);
-      this.label6.TabIndex = 29;
-      this.label6.Text = "Expire Date :";
-      // 
-      // label7
-      // 
-      this.label7.AutoSize = true;
-      this.label7.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.label7.Location = new System.Drawing.Point(51, 61);
-      this.label7.Name = "label7";
-      this.label7.Size = new System.Drawing.Size(183, 25);
-      this.label7.TabIndex = 30;
-      this.label7.Text = "Subscription Type :";
-      // 
-      // label8
-      // 
-      this.label8.AutoSize = true;
-      this.label8.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.label8.Location = new System.Drawing.Point(74, 11);
-      this.label8.Name = "label8";
-      this.label8.Size = new System.Drawing.Size(160, 25);
-      this.label8.TabIndex = 31;
-      this.label8.Text = "Subscription ID :";
-      // 
-      // iconButton2
-      // 
-      this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.iconButton2.FlatAppearance.BorderSize = 0;
-      this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Orcid;
-      this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton2.IconSize = 35;
-      this.iconButton2.Location = new System.Drawing.Point(10, 10);
-      this.iconButton2.Name = "iconButton2";
-      this.iconButton2.Size = new System.Drawing.Size(35, 27);
-      this.iconButton2.TabIndex = 28;
-      this.iconButton2.UseVisualStyleBackColor = true;
-      // 
-      // iconButton6
-      // 
-      this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.iconButton6.FlatAppearance.BorderSize = 0;
-      this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.GetPocket;
-      this.iconButton6.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton6.IconSize = 35;
-      this.iconButton6.Location = new System.Drawing.Point(10, 60);
-      this.iconButton6.Name = "iconButton6";
-      this.iconButton6.Size = new System.Drawing.Size(35, 27);
-      this.iconButton6.TabIndex = 32;
-      this.iconButton6.UseVisualStyleBackColor = true;
-      // 
-      // iconButton7
-      // 
-      this.iconButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.iconButton7.FlatAppearance.BorderSize = 0;
-      this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
-      this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
-      this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton7.IconSize = 35;
-      this.iconButton7.Location = new System.Drawing.Point(10, 109);
-      this.iconButton7.Name = "iconButton7";
-      this.iconButton7.Size = new System.Drawing.Size(35, 27);
-      this.iconButton7.TabIndex = 33;
-      this.iconButton7.UseVisualStyleBackColor = true;
+      this.label20.Text = "Phone Number :";
       // 
       // iconButton8
       // 
@@ -368,49 +265,152 @@
       this.iconButton8.TabIndex = 34;
       this.iconButton8.UseVisualStyleBackColor = true;
       // 
-      // lblPlayerID
+      // iconButton7
       // 
-      this.lblPlayerID.AutoSize = true;
-      this.lblPlayerID.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblPlayerID.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblPlayerID.Location = new System.Drawing.Point(228, 11);
-      this.lblPlayerID.Name = "lblPlayerID";
-      this.lblPlayerID.Size = new System.Drawing.Size(36, 25);
-      this.lblPlayerID.TabIndex = 35;
-      this.lblPlayerID.Text = "???";
+      this.iconButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton7.FlatAppearance.BorderSize = 0;
+      this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.FileCircleCheck;
+      this.iconButton7.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton7.IconSize = 35;
+      this.iconButton7.Location = new System.Drawing.Point(10, 109);
+      this.iconButton7.Name = "iconButton7";
+      this.iconButton7.Size = new System.Drawing.Size(35, 27);
+      this.iconButton7.TabIndex = 33;
+      this.iconButton7.UseVisualStyleBackColor = true;
       // 
-      // lblFullName
+      // iconButton6
       // 
-      this.lblFullName.AutoSize = true;
-      this.lblFullName.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblFullName.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblFullName.Location = new System.Drawing.Point(228, 61);
-      this.lblFullName.Name = "lblFullName";
-      this.lblFullName.Size = new System.Drawing.Size(36, 25);
-      this.lblFullName.TabIndex = 36;
-      this.lblFullName.Text = "???";
+      this.iconButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton6.FlatAppearance.BorderSize = 0;
+      this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.GetPocket;
+      this.iconButton6.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton6.IconSize = 35;
+      this.iconButton6.Location = new System.Drawing.Point(10, 60);
+      this.iconButton6.Name = "iconButton6";
+      this.iconButton6.Size = new System.Drawing.Size(35, 27);
+      this.iconButton6.TabIndex = 32;
+      this.iconButton6.UseVisualStyleBackColor = true;
       // 
-      // lblPhone
+      // iconButton2
       // 
-      this.lblPhone.AutoSize = true;
-      this.lblPhone.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblPhone.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblPhone.Location = new System.Drawing.Point(228, 110);
-      this.lblPhone.Name = "lblPhone";
-      this.lblPhone.Size = new System.Drawing.Size(36, 25);
-      this.lblPhone.TabIndex = 37;
-      this.lblPhone.Text = "???";
+      this.iconButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.iconButton2.FlatAppearance.BorderSize = 0;
+      this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Orcid;
+      this.iconButton2.IconColor = System.Drawing.Color.SteelBlue;
+      this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton2.IconSize = 35;
+      this.iconButton2.Location = new System.Drawing.Point(10, 10);
+      this.iconButton2.Name = "iconButton2";
+      this.iconButton2.Size = new System.Drawing.Size(35, 27);
+      this.iconButton2.TabIndex = 28;
+      this.iconButton2.UseVisualStyleBackColor = true;
       // 
-      // lblHasSubscription
+      // lblSubscriptionID
       // 
-      this.lblHasSubscription.AutoSize = true;
-      this.lblHasSubscription.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
-      this.lblHasSubscription.ForeColor = System.Drawing.SystemColors.WindowText;
-      this.lblHasSubscription.Location = new System.Drawing.Point(228, 158);
-      this.lblHasSubscription.Name = "lblHasSubscription";
-      this.lblHasSubscription.Size = new System.Drawing.Size(36, 25);
-      this.lblHasSubscription.TabIndex = 38;
-      this.lblHasSubscription.Text = "???";
+      this.lblSubscriptionID.AutoSize = true;
+      this.lblSubscriptionID.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblSubscriptionID.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblSubscriptionID.Location = new System.Drawing.Point(236, 11);
+      this.lblSubscriptionID.Name = "lblSubscriptionID";
+      this.lblSubscriptionID.Size = new System.Drawing.Size(36, 25);
+      this.lblSubscriptionID.TabIndex = 1;
+      this.lblSubscriptionID.Text = "???";
+      // 
+      // lblSubscriptionType
+      // 
+      this.lblSubscriptionType.AutoSize = true;
+      this.lblSubscriptionType.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblSubscriptionType.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblSubscriptionType.Location = new System.Drawing.Point(236, 61);
+      this.lblSubscriptionType.Name = "lblSubscriptionType";
+      this.lblSubscriptionType.Size = new System.Drawing.Size(36, 25);
+      this.lblSubscriptionType.TabIndex = 18;
+      this.lblSubscriptionType.Text = "???";
+      // 
+      // label8
+      // 
+      this.label8.AutoSize = true;
+      this.label8.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.label8.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.label8.Location = new System.Drawing.Point(74, 11);
+      this.label8.Name = "label8";
+      this.label8.Size = new System.Drawing.Size(160, 25);
+      this.label8.TabIndex = 31;
+      this.label8.Text = "Subscription ID :";
+      // 
+      // label7
+      // 
+      this.label7.AutoSize = true;
+      this.label7.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.label7.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.label7.Location = new System.Drawing.Point(169, 61);
+      this.label7.Name = "label7";
+      this.label7.Size = new System.Drawing.Size(65, 25);
+      this.label7.TabIndex = 30;
+      this.label7.Text = "Type :";
+      // 
+      // lblStartDate
+      // 
+      this.lblStartDate.AutoSize = true;
+      this.lblStartDate.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblStartDate.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblStartDate.Location = new System.Drawing.Point(236, 110);
+      this.lblStartDate.Name = "lblStartDate";
+      this.lblStartDate.Size = new System.Drawing.Size(36, 25);
+      this.lblStartDate.TabIndex = 21;
+      this.lblStartDate.Text = "???";
+      // 
+      // label6
+      // 
+      this.label6.AutoSize = true;
+      this.label6.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.label6.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.label6.Location = new System.Drawing.Point(110, 158);
+      this.label6.Name = "label6";
+      this.label6.Size = new System.Drawing.Size(124, 25);
+      this.label6.TabIndex = 29;
+      this.label6.Text = "Expire Date :";
+      // 
+      // label5
+      // 
+      this.label5.AutoSize = true;
+      this.label5.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.label5.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.label5.Location = new System.Drawing.Point(123, 110);
+      this.label5.Name = "label5";
+      this.label5.Size = new System.Drawing.Size(111, 25);
+      this.label5.TabIndex = 28;
+      this.label5.Text = "Start Date :";
+      // 
+      // lblExpireDate
+      // 
+      this.lblExpireDate.AutoSize = true;
+      this.lblExpireDate.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold);
+      this.lblExpireDate.ForeColor = System.Drawing.SystemColors.WindowText;
+      this.lblExpireDate.Location = new System.Drawing.Point(236, 158);
+      this.lblExpireDate.Name = "lblExpireDate";
+      this.lblExpireDate.Size = new System.Drawing.Size(36, 25);
+      this.lblExpireDate.TabIndex = 26;
+      this.lblExpireDate.Text = "???";
+      // 
+      // groupBox1
+      // 
+      this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+      this.groupBox1.Controls.Add(this.splitContainer1);
+      this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.groupBox1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.groupBox1.Location = new System.Drawing.Point(0, 0);
+      this.groupBox1.Name = "groupBox1";
+      this.groupBox1.Size = new System.Drawing.Size(954, 253);
+      this.groupBox1.TabIndex = 30;
+      this.groupBox1.TabStop = false;
+      this.groupBox1.Text = "Info";
       // 
       // ctrlPlayerCard
       // 

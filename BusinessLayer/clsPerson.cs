@@ -22,6 +22,7 @@ namespace BusinessLayer
 
     public string FirstName { get; set; }
     public string LastName { get; set; }
+    public string FullName { get; set; }
     public string PhoneNumber { get; set; }
     
 
@@ -31,6 +32,7 @@ namespace BusinessLayer
       this.FirstName = string.Empty;
       this.LastName = string.Empty;
       this.PhoneNumber = string.Empty;
+      this.FullName = string.Empty;
 
       _Mode = enMode.AddNew;
     }
@@ -42,6 +44,7 @@ namespace BusinessLayer
       this.FirstName = FirstName;
       this.LastName = LastName;
       this.PhoneNumber = PhoneNumber;
+      this.FullName = $"{FirstName} {LastName}";
 
       _Mode = enMode.Update;
     }

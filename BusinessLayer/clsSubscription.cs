@@ -48,7 +48,9 @@ namespace BusinessLayer
       get { return _EndDate; }
       set { _EndDate = value; }
     }
-    
+
+    private clsMemberShip _MemberShipInfo;
+
     public clsSubscription()
     {
       this.SubscriptionID = -1;
@@ -68,6 +70,7 @@ namespace BusinessLayer
       this.MemberShipID = MemberShipID;
       this.StartDate = Start;
       this.EndDate = End;
+      this._MemberShipInfo = clsMemberShip.Find(MemberShipID);
 
       _Mode = enMode.Update;
     }
@@ -85,7 +88,7 @@ namespace BusinessLayer
 
     }
 
-    public clsSubscription Find(int SubscriptionID)
+     public static clsSubscription Find(int SubscriptionID)
     {
       int PlayerID =-1, MemberShipID =-1;
       DateTime StartDate = DateTime.Now, EndDate = DateTime.Now;

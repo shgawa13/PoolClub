@@ -23,6 +23,7 @@ namespace BusinessLayer
 
     public int PersonID { get; set; }
     public bool HasMemberShip { get; set; }
+    
     public clsPerson PlayerInfo;
 
     public clsPlayer()
@@ -41,7 +42,7 @@ namespace BusinessLayer
       this.PersonID = PersonID;
       this.HasMemberShip = HasMemberShip;
       this.PlayerInfo = clsPerson.Find(PersonID);
-
+      
       _Mode = enMode.Update;
     }
 
