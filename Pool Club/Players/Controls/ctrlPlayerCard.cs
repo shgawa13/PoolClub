@@ -66,8 +66,16 @@ namespace Pool_Club
     private void _LoadSubscriptionData()
     {
       _Subscription = clsSubscription.Find(_PlayerID);
-      if (_Subscription == null) { }
+      if (_Subscription != null) {
+        lblSubscriptionID.Text = _Subscription.SubscriptionID.ToString();
+        //lblSubscriptionType.Text =
+        lblStartDate.Text = _Subscription.StartDate.ToString();
+        lblExpireDate.Text = _Subscription.EndDate.ToString();
+
+      }
     }
+
+ 
 
   }
 }

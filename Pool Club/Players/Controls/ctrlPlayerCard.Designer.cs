@@ -54,6 +54,7 @@
       this.label5 = new System.Windows.Forms.Label();
       this.lblExpireDate = new System.Windows.Forms.Label();
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.linkEdit = new System.Windows.Forms.LinkLabel();
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
       this.splitContainer1.Panel1.SuspendLayout();
       this.splitContainer1.Panel2.SuspendLayout();
@@ -64,7 +65,7 @@
       // splitContainer1
       // 
       this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-      this.splitContainer1.Location = new System.Drawing.Point(6, 26);
+      this.splitContainer1.Location = new System.Drawing.Point(6, 37);
       this.splitContainer1.Name = "splitContainer1";
       // 
       // splitContainer1.Panel1
@@ -401,23 +402,38 @@
       // groupBox1
       // 
       this.groupBox1.BackColor = System.Drawing.Color.Gainsboro;
+      this.groupBox1.Controls.Add(this.linkEdit);
       this.groupBox1.Controls.Add(this.splitContainer1);
-      this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
       this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
       this.groupBox1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.groupBox1.Location = new System.Drawing.Point(0, 0);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(954, 253);
+      this.groupBox1.Size = new System.Drawing.Size(954, 270);
       this.groupBox1.TabIndex = 30;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Info";
+      // 
+      // linkEdit
+      // 
+      this.linkEdit.ActiveLinkColor = System.Drawing.Color.Teal;
+      this.linkEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+      this.linkEdit.AutoSize = true;
+      this.linkEdit.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.linkEdit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+      this.linkEdit.LinkColor = System.Drawing.Color.SteelBlue;
+      this.linkEdit.Location = new System.Drawing.Point(855, 8);
+      this.linkEdit.Name = "linkEdit";
+      this.linkEdit.Size = new System.Drawing.Size(88, 25);
+      this.linkEdit.TabIndex = 1;
+      this.linkEdit.TabStop = true;
+      this.linkEdit.Text = "Edit Info";
       // 
       // ctrlPlayerCard
       // 
       this.BackColor = System.Drawing.SystemColors.Control;
       this.Controls.Add(this.groupBox1);
       this.Name = "ctrlPlayerCard";
-      this.Size = new System.Drawing.Size(954, 253);
+      this.Size = new System.Drawing.Size(954, 271);
       this.Load += new System.EventHandler(this.ctrlPlayerCard_Load);
       this.splitContainer1.Panel1.ResumeLayout(false);
       this.splitContainer1.Panel1.PerformLayout();
@@ -426,6 +442,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
       this.splitContainer1.ResumeLayout(false);
       this.groupBox1.ResumeLayout(false);
+      this.groupBox1.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -457,5 +474,6 @@
     private System.Windows.Forms.Label lblFullName;
     private System.Windows.Forms.Label lblPhone;
     private System.Windows.Forms.Label lblHasSubscription;
+    private System.Windows.Forms.LinkLabel linkEdit;
   }
 }

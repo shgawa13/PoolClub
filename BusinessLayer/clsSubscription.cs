@@ -49,7 +49,7 @@ namespace BusinessLayer
       set { _EndDate = value; }
     }
 
-    private clsMemberShip _MemberShipInfo;
+    public clsMemberShip _MemberShipInfo;
 
     public clsSubscription()
     {

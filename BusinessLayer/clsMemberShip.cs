@@ -10,7 +10,8 @@ namespace BusinessLayer
 {
   public class clsMemberShip
   {
-    public enum enType { Daimond =1,Gold=2,Silver=3};
+    public enum enType {None=0, Daimond =1,Gold=2,Silver=3};
+    public enType MembershipType = enType.None;
 
     public enum enMode { AddNew=0, Update=1 }
     private enMode _Mode = enMode.AddNew;
@@ -60,7 +61,7 @@ namespace BusinessLayer
       this.Type = Type;
       this.Description = Description;
       this.Price = Price;
-
+      
       _Mode = enMode.Update;
     }
 
