@@ -290,7 +290,7 @@ namespace DataLayer
     {
       DataTable dtPlayers = new DataTable();
 
-      string query = @"Select * from PlayresView;";
+      string query = @"Select * from PlayersView;";
 
       try
       {

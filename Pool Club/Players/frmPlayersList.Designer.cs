@@ -28,6 +28,8 @@
     /// </summary>
     private void InitializeComponent()
     {
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+      System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
       this.panel1 = new System.Windows.Forms.Panel();
       this.btnSearch = new System.Windows.Forms.Button();
       this.btnAddNew = new System.Windows.Forms.Button();
@@ -84,6 +86,7 @@
       // 
       // btnAddNew
       // 
+      this.btnAddNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
       this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
       this.btnAddNew.FlatAppearance.BorderSize = 0;
       this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -172,9 +175,27 @@
       // 
       this.dgvPlayers.AllowUserToAddRows = false;
       this.dgvPlayers.AllowUserToDeleteRows = false;
+      this.dgvPlayers.AllowUserToOrderColumns = true;
+      this.dgvPlayers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
       this.dgvPlayers.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+      dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+      dataGridViewCellStyle1.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+      dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+      this.dgvPlayers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
       this.dgvPlayers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
       this.dgvPlayers.ContextMenuStrip = this.ctmsPlayers;
+      dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+      dataGridViewCellStyle2.BackColor = System.Drawing.Color.Snow;
+      dataGridViewCellStyle2.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+      dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+      dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+      dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+      this.dgvPlayers.DefaultCellStyle = dataGridViewCellStyle2;
       this.dgvPlayers.Dock = System.Windows.Forms.DockStyle.Fill;
       this.dgvPlayers.Location = new System.Drawing.Point(0, 55);
       this.dgvPlayers.Name = "dgvPlayers";

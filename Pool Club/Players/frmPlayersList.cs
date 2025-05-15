@@ -16,7 +16,7 @@ namespace Pool_Club.Players
     private clsPlayer _Player;
 
     // in case there is no data in the database.
-    private static DataTable _dtAllPlayers = clsPlayer.GetAllPeople() ?? new DataTable();
+    private static DataTable _dtAllPlayers = clsPlayer.GetAllPlayers() ?? new DataTable();
     private DataTable _dtPlayers = _dtAllPlayers.Clone();
 
     public frmPlayersList()
