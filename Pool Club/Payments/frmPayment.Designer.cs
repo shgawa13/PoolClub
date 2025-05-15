@@ -31,6 +31,7 @@
       this.comboBox1 = new System.Windows.Forms.ComboBox();
       this.lblTitle = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.label4 = new System.Windows.Forms.Label();
       this.label1 = new System.Windows.Forms.Label();
       this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
       this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
       this.comboBox2 = new System.Windows.Forms.ComboBox();
       this.iconButton3 = new FontAwesome.Sharp.IconButton();
-      this.iconButton1 = new FontAwesome.Sharp.IconButton();
       this.iconButton2 = new FontAwesome.Sharp.IconButton();
       this.btnCancel = new Pool_Club.Controls.ctrlExpertBtn();
       this.btnSave = new Pool_Club.Controls.ctrlExpertBtn();
@@ -84,6 +84,20 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(962, 121);
       this.panel1.TabIndex = 17;
+      // 
+      // iconButton1
+      // 
+      this.iconButton1.FlatAppearance.BorderSize = 0;
+      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTransfer;
+      this.iconButton1.IconColor = System.Drawing.Color.Snow;
+      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+      this.iconButton1.IconSize = 100;
+      this.iconButton1.Location = new System.Drawing.Point(440, 10);
+      this.iconButton1.Name = "iconButton1";
+      this.iconButton1.Size = new System.Drawing.Size(82, 71);
+      this.iconButton1.TabIndex = 16;
+      this.iconButton1.UseVisualStyleBackColor = true;
       // 
       // label4
       // 
@@ -171,7 +185,7 @@
       this.comboBox2.Items.AddRange(new object[] {
             "%5",
             "%10"});
-      this.comboBox2.Location = new System.Drawing.Point(144, 59);
+      this.comboBox2.Location = new System.Drawing.Point(133, 59);
       this.comboBox2.Name = "comboBox2";
       this.comboBox2.Size = new System.Drawing.Size(153, 33);
       this.comboBox2.TabIndex = 25;
@@ -190,20 +204,6 @@
       this.iconButton3.Size = new System.Drawing.Size(35, 27);
       this.iconButton3.TabIndex = 28;
       this.iconButton3.UseVisualStyleBackColor = true;
-      // 
-      // iconButton1
-      // 
-      this.iconButton1.FlatAppearance.BorderSize = 0;
-      this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.MoneyBillTransfer;
-      this.iconButton1.IconColor = System.Drawing.Color.Snow;
-      this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-      this.iconButton1.IconSize = 100;
-      this.iconButton1.Location = new System.Drawing.Point(440, 10);
-      this.iconButton1.Name = "iconButton1";
-      this.iconButton1.Size = new System.Drawing.Size(82, 71);
-      this.iconButton1.TabIndex = 16;
-      this.iconButton1.UseVisualStyleBackColor = true;
       // 
       // iconButton2
       // 

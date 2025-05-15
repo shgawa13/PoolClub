@@ -41,6 +41,8 @@ namespace Pool_Club.Players
     {
       if (_Mode == enMode.AddNew) 
       {
+        _Person = new clsPerson();
+
         this.Text = "Add New";
         lblTitle.Text = "Add New";
         lblPlayerID.Text = "???";
@@ -73,17 +75,17 @@ namespace Pool_Club.Players
 
     private void frmAddUpdatePlayer_Load(object sender, EventArgs e)
     {
+      _ResetDefualtValues();
+
       if (_Mode == enMode.Update)
         _LoadData();
     }
 
     // Now we Fill both Person and Player Obj.
     
-    private void btnCancel_Click(object sender, EventArgs e)
-    {
-      this.Close();
-    }
+  
 
+  
     private void btnSave_Click(object sender, EventArgs e)
     {
       _Person.FirstName = txbFirstName.Text.Trim();
@@ -93,6 +95,11 @@ namespace Pool_Club.Players
       if (_Person.Save())
       {
         // now we create player
+        if(_Mode == enMode.AddNew)
+        {
+          _Player = new clsPlayer();
+        }
+
         _Player.PersonID = _Person.PersonID;
         if (_Player.Save())
         {
@@ -104,8 +111,13 @@ namespace Pool_Club.Players
           MessageBox.Show("Error: Something went worng couldn't Save Player.");
         }
       }
+
     }
 
-    
+    private void btnClose_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+
   }
 }

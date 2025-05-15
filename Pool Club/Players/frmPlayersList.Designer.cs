@@ -29,6 +29,8 @@
     private void InitializeComponent()
     {
       this.panel1 = new System.Windows.Forms.Panel();
+      this.btnSearch = new System.Windows.Forms.Button();
+      this.btnAddNew = new System.Windows.Forms.Button();
       this.txtFilterValue = new System.Windows.Forms.TextBox();
       this.cbFilterBy = new System.Windows.Forms.ComboBox();
       this.label1 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
       this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
       this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
       this.lblPlayersDataTable = new System.Windows.Forms.Label();
-      this.btnAddPlayer = new Pool_Club.Controls.ctrlExpertBtn();
-      this.btnSearch = new Pool_Club.Controls.ctrlExpertBtn();
       this.panel1.SuspendLayout();
       this.panelDown.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.dgvPlayers)).BeginInit();
@@ -56,8 +56,8 @@
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(35)))), ((int)(((byte)(48)))));
-      this.panel1.Controls.Add(this.btnAddPlayer);
       this.panel1.Controls.Add(this.btnSearch);
+      this.panel1.Controls.Add(this.btnAddNew);
       this.panel1.Controls.Add(this.txtFilterValue);
       this.panel1.Controls.Add(this.cbFilterBy);
       this.panel1.Controls.Add(this.label1);
@@ -66,6 +66,36 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(800, 55);
       this.panel1.TabIndex = 0;
+      // 
+      // btnSearch
+      // 
+      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnSearch.FlatAppearance.BorderSize = 0;
+      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnSearch.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnSearch.Location = new System.Drawing.Point(444, 9);
+      this.btnSearch.Name = "btnSearch";
+      this.btnSearch.Size = new System.Drawing.Size(96, 37);
+      this.btnSearch.TabIndex = 4;
+      this.btnSearch.Text = "Search";
+      this.btnSearch.UseVisualStyleBackColor = false;
+      this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+      // 
+      // btnAddNew
+      // 
+      this.btnAddNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
+      this.btnAddNew.FlatAppearance.BorderSize = 0;
+      this.btnAddNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnAddNew.Font = new System.Drawing.Font("Ebrima", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnAddNew.ForeColor = System.Drawing.Color.WhiteSmoke;
+      this.btnAddNew.Location = new System.Drawing.Point(689, 6);
+      this.btnAddNew.Name = "btnAddNew";
+      this.btnAddNew.Size = new System.Drawing.Size(104, 44);
+      this.btnAddNew.TabIndex = 3;
+      this.btnAddNew.Text = "Add New";
+      this.btnAddNew.UseVisualStyleBackColor = false;
+      this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
       // 
       // txtFilterValue
       // 
@@ -223,46 +253,6 @@
       this.lblPlayersDataTable.TabIndex = 2;
       this.lblPlayersDataTable.Text = "There are no players yet";
       // 
-      // btnAddPlayer
-      // 
-      this.btnAddPlayer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-      this.btnAddPlayer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnAddPlayer.BorderColor = System.Drawing.Color.Gainsboro;
-      this.btnAddPlayer.BorderRadius = 5;
-      this.btnAddPlayer.BorderSize = 0;
-      this.btnAddPlayer.FlatAppearance.BorderSize = 0;
-      this.btnAddPlayer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnAddPlayer.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnAddPlayer.ForeColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.Location = new System.Drawing.Point(684, 5);
-      this.btnAddPlayer.Name = "btnAddPlayer";
-      this.btnAddPlayer.Size = new System.Drawing.Size(104, 44);
-      this.btnAddPlayer.TabIndex = 4;
-      this.btnAddPlayer.Text = "Add New";
-      this.btnAddPlayer.TextColor = System.Drawing.Color.Azure;
-      this.btnAddPlayer.UseVisualStyleBackColor = false;
-      this.btnAddPlayer.Click += new System.EventHandler(this.btnAddPlayer_Click);
-      // 
-      // btnSearch
-      // 
-      this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(99)))), ((int)(((byte)(160)))));
-      this.btnSearch.BorderColor = System.Drawing.Color.PaleVioletRed;
-      this.btnSearch.BorderRadius = 5;
-      this.btnSearch.BorderSize = 0;
-      this.btnSearch.FlatAppearance.BorderSize = 0;
-      this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-      this.btnSearch.Font = new System.Drawing.Font("Ebrima", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnSearch.ForeColor = System.Drawing.Color.Azure;
-      this.btnSearch.Location = new System.Drawing.Point(446, 10);
-      this.btnSearch.Name = "btnSearch";
-      this.btnSearch.Size = new System.Drawing.Size(94, 34);
-      this.btnSearch.TabIndex = 3;
-      this.btnSearch.Text = "Search";
-      this.btnSearch.TextColor = System.Drawing.Color.Azure;
-      this.btnSearch.UseVisualStyleBackColor = false;
-      // 
       // frmPlayersList
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,9 +286,7 @@
     private System.Windows.Forms.TextBox txtFilterValue;
     private System.Windows.Forms.ComboBox cbFilterBy;
     private System.Windows.Forms.Label lblPlayersNumber;
-    private Controls.ctrlExpertBtn btnSearch;
     private System.Windows.Forms.DataGridView dgvPlayers;
-    private Controls.ctrlExpertBtn btnAddPlayer;
     private Syncfusion.Windows.Forms.Tools.ContextMenuStripEx ctmsPlayers;
     private System.Windows.Forms.ToolStripMenuItem showInfoToolStripMenuItem;
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
@@ -308,5 +296,7 @@
     private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
     private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     private System.Windows.Forms.Label lblPlayersDataTable;
+    private System.Windows.Forms.Button btnAddNew;
+    private System.Windows.Forms.Button btnSearch;
   }
 }
